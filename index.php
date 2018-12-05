@@ -8,6 +8,10 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/libs/jquery-1.11.2.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	<!-- The snow.css file animates the snow -->
+	<link rel="stylesheet" href="css/snow.css" type="text/css" media="screen" charset="utf-8">
+	<!-- The snow.js file creates the snow -->
+	<script src="js/snow.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/main.js" ></script>
 </head>
 <body>
@@ -26,6 +30,21 @@
 		
 	<div id="wrapper" class="CanvasImg"> 
 		<div class="content">
+			<!-- snow -->
+			<div id="snowContainer" class="airhotballoons_bg">
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+			</div>
+
 			<div id='is18'>
 				<div class='center'>
 					<img class="is18-img01" src="images/is18_title.png">
@@ -70,19 +89,9 @@
 					
 				</div>
 			</div>
-			<div class="airhotballoons_bg">
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-			</div>
+			
+
+			
 		</div>
 
 		

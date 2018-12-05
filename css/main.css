@@ -9,3 +9,9 @@
     min-height: 519px;
 }
 
+#index .title{
+
+	position: relative;
+    width: 260px;
+    margin: 0 auto;
+}
