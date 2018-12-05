@@ -7,6 +7,7 @@
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/libs/jquery-1.11.2.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/main.js" ></script>
 </head>
 <body>
@@ -48,14 +49,42 @@
 			<div class="inner">
 				<div id="index">
 					<div class="title">
-						
+						<div class="title01">
+							<img src="images/index_title01.png">
+						</div>
+						<div class="title02">
+							<img src="images/index_title02.png">
+						</div>
+						<div class="title03">
+							<img src="images/index_title03.png">
+						</div>
+						<div class="title04">
+							<img src="images/index_title04.png">
+						</div>
+					</div>
+					<div class="btn">
+						<img src="images/index_btn.png">
 					</div>
 				</div>
 				<div id="event">
 					
 				</div>
 			</div>
+			<div class="airhotballoons_bg">
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+				<div class="ahb"></div>
+			</div>
 		</div>
+
 		
 	</div>
 	<footer>
