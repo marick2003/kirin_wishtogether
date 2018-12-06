@@ -1,0 +1,72 @@
+#wrapper .content .inner {
+    width: 310px;
+    height: 350px;
+     top: 0px; 
+    left: 50%;
+     margin: 0px 0 0 0px; 
+     margin-top: 0px; 
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: -155px;
+    position: absolute;
+    display: none;
+}
+#event{
+
+    position: relative;
+    
+    /*margin-top: -80px;*/
+}
+
+#event .ahb_wish{
+    position: relative;
+    width: 185px;
+    height: 345px;
+    margin: 0 auto;
+
+}
+#event .ahb_wish img{
+    position: absolute;
+    top: 20px;
+   -webkit-animation: float 4s ease-in-out infinite;
+   animation: float 4s ease-in-out infinite;
+
+}
+.wishtitle{
+
+    position: relative;
+    width: 230px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.inputwish p{
+
+    float: left;
+}
+.inputwish .text:nth-child(1) p{
+     
+     margin-left: 32px;
+
+}
+.inputwish .text:nth-child(1) input{
+    width: 220px;
+    height: 24px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+
+
+}
+.inputwish .text:nth-child(2) input{
+    width: 220px;
+    height: 100px;
+    margin-bottom: 20px;
+    
+}
+.inputwish .btn{
+
+    position: relative;
+    width: 247px;
+    margin: 0 auto;
+    margin-bottom: 79px; 
+}

@@ -1,7 +1,7 @@
 var ahb_array=[
-{top:'46%',left:'33%'},
-{top:'28%',left:'53%'},
-{top:'-15%',left:'33%'},
+{top:'62%',left:'33%'},
+{top:'54%',left:'53%'},
+{top:'-15%',left:'29%'},
 {top:'38%',left:'25%'},
 {top:'49%',left:'1%'},
 {top:'0%',left:'61%'},
@@ -21,29 +21,8 @@ $(document).ready(function() {
   }).resize();
 
   init();
+  intro();
 
-  $(".is18btn.active").click(function(e) {
-  		
-  		$("#is18").fadeOut(function(){
-
-  				intro();
-  		});
-
-  });
-  ///進互動
-  $("#index .btn").click(function(e) {
-  		
-  			changepage("event",function(){
-
-  				start_event();
-  			})
-
-  });
-  $(".logo").click(function(e) {
-  		
-  		
-
-  });
 
 });
 
@@ -105,19 +84,17 @@ function start_index(){
 
 	 }, 2000);
 
-
+	$("#index .title .title04").addClass('animated infinite swing delay-5s');
 	
 	setTimeout(function() { 
 
 	$("#index .title .step2").each(function( index ) {
-		TweenMax.to($(this), 3 ,{delay:0.2*index, opacity:1,rotationX:0, transformOrigin:"center top",ease: Elastic.easeOut});
+		TweenMax.to($(this), 0.5 ,{delay:0.2*index, opacity:1,rotationX:0, transformOrigin:"center top", ease: Power2.easeOut});
 	});
 
      }, 2500);
 	setTimeout(function() {
-		$("#index .title .title04").addClass('animated infinite swing delay-5s');
-	    
-		TweenMax.to($("#index .btn"), 3 ,{delay:0*index, opacity:1,rotationX:0, transformOrigin:"center top", ease: Elastic.easeOut});
+		TweenMax.to($("#index .btn"), 0.5 ,{delay:0*index, opacity:1,rotationX:0, transformOrigin:"center top", ease: Power2.easeOut});
      }, 3000);
 	//snowContainer
 	$(".snowContainer div" ).each(function( index ) {
