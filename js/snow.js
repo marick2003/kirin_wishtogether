@@ -4,12 +4,12 @@ Copyright (C) 2012 Web3Canvas. All Rights Reserved.
 
 
 /* Define the number of snow to be used in the animation */
-const NUMBER_OF_snow = 30;
+const NUMBER_OF_snow = 20;
 
 /* 
     Called when the "Falling snow" page is completely loaded.
 */
-function init()
+function snow_init()
 {
     /* Get a reference to the element that will contain the snow */
     var container = document.getElementById('snowContainer');
@@ -100,6 +100,7 @@ function createAsnow()
 
     image.style.webkitAnimationDuration = spinDuration;
 
+    snowDiv.className="snowclass";
     // add the <img> to the <div>
     snowDiv.appendChild(image);
 
@@ -107,6 +108,10 @@ function createAsnow()
     return snowDiv;
 }
 
-
 /* Calls the init function when the "Falling snow" page is full loaded */
-window.addEventListener('load', init, false);
+ //window.addEventListener('load', init, false);
+
+function clears(){
+
+    
+}

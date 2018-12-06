@@ -6,7 +6,7 @@ html, body{
     font-weight: 400;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+/*    overflow: hidden;*/
     background-color: #f1f1f1;
 }
 img{
@@ -25,10 +25,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover; */
 }
+
 .CanvasImg {
         background-position: top center;
         background-attachment: fixed;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         top: 0;
@@ -37,9 +38,9 @@ body {
         right: 0;
         border: 0;
         background: url("../images/_bg.jpg") no-repeat;
-        background-size: cover !important;
-        -webkit-background-size: cover !important;
-        -moz-background-size: cover !impoertant;
+        background-size: 100% !important;
+        -webkit-background-size: 100% !important;
+        -moz-background-size: 100% !impoertant;
     }
 .center{
    width: 350px;
@@ -120,6 +121,8 @@ footer{
     margin: 61px 0 60px 0;
     position: absolute;
     z-index: 2;
+/*    overflow: hidden;
+    overflow-y: auto;*/
 
 }
 #wrapper .content .inner{
@@ -186,3 +189,133 @@ footer{
     -o-transform: skewX(-20deg);
     transform: skewX(-20deg);
 }
+
+
+#menu {
+  width: 100%;
+  height: 100%;
+  min-height: 523px;
+  position: absolute;
+  z-index: 8;
+
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+body.menu-open #menu {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+#menu .main {
+  float: left;
+  width: 100%;
+  margin-top: 61px;
+}
+#menu .main .menu {
+  width: 100%;
+  float: left;
+}
+#menu .main .menu li {
+  width: 100%;
+  height: 80px;
+  margin: 0px;
+  float: left;
+  background: #191919;
+  border-bottom: 2px solid #666; 
+}
+#menu .main .menu li a {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+#menu .main .menu li .main {
+  height: 28px;
+  float: left;
+  margin-top: 23px;
+}
+#menu .main .menu li .main .text {
+  height: 100%;
+  margin-top: 0px;
+  margin: 0 auto;
+  background-image: url(../images/menu.png);
+  background-size: auto;
+  width: 66%;
+}
+#menu .main .menu li .main .text {
+  
+   background-position: 0 0;
+}
+
+#menu .main .menu li:nth-child(2) .main .text{
+    background-position: 0 -76px;
+} 
+#menu .main .menu li:nth-child(3) .main .text{
+    background-position: 0px -141px;
+    height: 46px;
+} 
+#menu .main .menu li:hover .main .text{
+
+    background-position-x: -233px;
+}
+#menu .main .social {
+  width: 100%;
+  float: left;
+  background: #191919;
+  border-bottom: 2px solid #666; 
+}
+#menu .main .social ul {
+}
+#menu .main .social ul li {
+  width: calc(50%);
+  height: 75px;
+  float: left;
+  border-right: 1px solid #666; 
+  cursor: pointer;
+}
+#menu .main .social ul li:nth-last-child(1) {
+  width: calc(50% - 1px);
+  border-right: none; 
+}
+#menu .main .social ul li a {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+#menu .main .social ul li .center {
+  width: 174px;
+  float: right;
+}
+#menu .main .social ul li:nth-child(2) .center {
+  float: left;
+}
+#menu .main .social ul li .main {
+  margin-top: 0px;
+}
+#menu .main .social ul li .main .text {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 22px 0 0 72px;
+  background-image: url(../images/social.png);
+  background-size: 60px auto; 
+}
+#menu .main .social ul li:nth-child(2) .text { background-position: 0 -30px; }
+#menu .main .social ul li:hover .text { background-position: -30px 0px; }
+#menu .main .social ul li:nth-child(2):hover .text { background-position: -30px -30px; }
+
+
+
+
+
+
+

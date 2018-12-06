@@ -5,16 +5,20 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<!-- The snow.css file animates the snow -->
+	<link rel="stylesheet" href="css/snow.css" type="text/css" media="screen" charset="utf-8">
+	<link href="css/swiper.css" rel="stylesheet" type="text/css" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/libs/jquery-1.11.2.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-	<!-- The snow.css file animates the snow -->
-	<link rel="stylesheet" href="css/snow.css" type="text/css" media="screen" charset="utf-8">
+
 	<!-- The snow.js file creates the snow -->
 	<script src="js/snow.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/libs/swiper.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
 	<script type="text/javascript" src="js/main.js" ></script>
 </head>
-<body>
+<body >
 	<header>
 		<div class="center">
 			<div class="logo">
@@ -27,22 +31,79 @@
 	   		</div>
 		</div>	
 	</header>
+<div id='menu'>
+	<div class='main'>
+		<ul class='menu'>
+			<li class='btn bounceBtn'>
+				<a href='edit.php'>
+					<div class='center'>
+						<div class='main'>
+							<div class='text'></div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li class='btn bounceBtn'>
+				<a href='card-review.php'>
+					<div class='center'>
+						<div class='main'>
+							<div class='text'></div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li class='btn bounceBtn'>
+				<a href='edit.php?page=2017word'>
+					<div class='center'>
+						<div class='main'>
+							<div class='text'></div>
+						</div>
+					</div>
+				</a>
+			</li>
 		
-	<div id="wrapper" class="CanvasImg"> 
+			
+		</ul>
+		<div class='social'>
+			<ul>
+				<li class='btn bounceBtn'>
+					<a href='https://www.instagram.com/kirin_bar_beer/' target='_blank'>
+						<div class='center'>
+							<div class='main'>
+								<div class='text'></div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class='btn bounceBtn'>
+					<a href='https://www.facebook.com/kirinbar/' target='_blank'>
+						<div class='center'>
+							<div class='main'>
+								<div class='text'></div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	<div id="wrapper"> 
+		<div class="CanvasImg"></div>
 		<div class="content">
 			<!-- snow -->
 			<div id="snowContainer" class="airhotballoons_bg">
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
-				<div class="ahb"></div>
+				<div class="ahb style01"></div>
+				<div class="ahb style02"></div>
+				<div class="ahb style03"></div>
+				<div class="ahb style04"></div>
+				<div class="ahb style05"></div>
+				<div class="ahb style03"></div>
+				<div class="ahb style01"></div>
+				<div class="ahb style02"></div>
+				<div class="ahb style04"></div>
+				<div class="ahb style02"></div>
+				<div class="ahb style05"></div>
 			</div>
 
 			<div id='is18'>
@@ -68,24 +129,99 @@
 			<div class="inner">
 				<div id="index">
 					<div class="title">
-						<div class="title01">
+						<div class="title01 step1">
 							<img src="images/index_title01.png">
 						</div>
-						<div class="title02">
+						<div class="title02 step1">
 							<img src="images/index_title02.png">
 						</div>
-						<div class="title03">
+						<div class="title03 step1">
 							<img src="images/index_title03.png">
 						</div>
-						<div class="title04">
+						<div class="title04 step1">
 							<img src="images/index_title04.png">
 						</div>
+						<div class="text01 step2">
+							<img src="images/index_txt01.png">
+						</div>
+						<div class="text02 step2">
+							<img src="images/index_txt02.png">
+						</div>
 					</div>
-					<div class="btn">
+					
+					<div class="btn step3">
 						<img src="images/index_btn.png">
 					</div>
 				</div>
+				<!-- -->
 				<div id="event">
+					  <!-- Swiper -->
+					  <div class="swiper-container">
+					    <div class="swiper-wrapper">
+					      <div class="swiper-slide">
+					      	<div class="ahb_wish">
+					      		<img src="images/ahb01.png">
+					      	</div>
+					      </div>
+					      <div class="swiper-slide">
+					      	<div class="ahb_wish">
+					      		<img src="images/ahb02.png">
+					      	</div>
+					      </div>
+					      <div class="swiper-slide">
+					      	<div class="ahb_wish">
+					      		<img src="images/ahb03.png">
+					      	</div>
+					      </div>
+					      <div class="swiper-slide">
+					      	<div class="ahb_wish">
+					      		<img src="images/ahb04.png">
+					      	</div>
+					      </div>
+					      <div class="swiper-slide">
+					      	<div class="ahb_wish">
+					      		<img src="images/ahb05.png">
+					      	</div>
+					      </div>
+					    </div>
+					    <!-- Add Arrows -->
+					    <div class="swiper-button-next"></div>
+					    <div class="swiper-button-prev"></div>
+					  </div>
+					 <div class="wishtitle">
+					 	<img src="images/event_wish01.png">
+					 </div>
+					 <div class="inputwish">
+					 	
+					     <div class="text">
+					     	<p>暱稱：</p>
+					     	<input type="text" name="">
+					     </div>
+					     <div class="text">
+					     	<p>你的願望：</p>
+					     	<input type="text" name="">
+					     </div>
+						<div class="btn">
+							<img src="images/index_btn.png">
+						</div>
+					 </div>
+					 
+				</div>
+
+				<div id="animate">
+					
+
+
+				</div>
+
+				<div id="form">
+					
+
+					
+				</div>
+				<div id="done">
+					
+
 					
 				</div>
 			</div>
