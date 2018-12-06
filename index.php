@@ -8,6 +8,7 @@
 	<!-- The snow.css file animates the snow -->
 	<link rel="stylesheet" href="css/snow.css" type="text/css" media="screen" charset="utf-8">
 	<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+	<link href="css/animate.css" rel="stylesheet" type="text/css" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/libs/jquery-1.11.2.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
