@@ -16,6 +16,7 @@
 	<!-- The snow.js file creates the snow -->
 	<script src="js/snow.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/swiper.min.js" ></script>
+	<script type="text/javascript" src="js/libs/loading.js" ></script>
 	<script type="text/javascript" src="js/common.js" ></script>
 	<script type="text/javascript" src="js/main.js" ></script>
 </head>
@@ -91,6 +92,7 @@
 </div>
 	<div id="wrapper"> 
 		<div class="CanvasImg"></div>
+		<?php include 'include/loading.php';?>
 		<div class="content">
 			<!-- snow -->
 			<div id="snowContainer" class="airhotballoons_bg">

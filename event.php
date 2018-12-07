@@ -16,6 +16,7 @@
 	<!-- The snow.js file creates the snow -->
 	<script src="js/snow.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/swiper.min.js" ></script>
+	<script type="text/javascript" src="js/libs/loading.js" ></script>
 	<script type="text/javascript" src="js/common.js" ></script>
 	<script type="text/javascript" src="js/event.js" ></script>
 </head>
@@ -91,6 +92,7 @@
 </div>
 	<div id="wrapper"> 
 		<div class="CanvasImg"></div>
+		<?php include 'include/loading.php';?>
 		<div class="content">
 			<!-- snow -->
 			<div id="snowContainer" class="airhotballoons_bg">
@@ -143,11 +145,11 @@
 					 	
 					     <div class="text">
 					     	<p>暱稱：</p>
-					     	<input type="text" name="">
+					     	<input class="ipt-text" type="text" name="" maxlength="10" placeholder="暱稱10字內...">
 					     </div>
 					     <div class="text">
 					     	<p>你的願望：</p>
-					     	<input type="text" name="">
+					     	<textarea class="ipt-text" type="text" name="" maxlength="50" placeholder="願望50字內..."></textarea>
 					     </div>
 						<div class="btn">
 							<img src="images/index_btn.png">
@@ -158,14 +160,18 @@
 				</div>
 
 				<div id="animate">
-					
+					<div class="user_ahb">
+						<div class="ahb_wish">
+					      	<img src="images/ahb02.png">
+					     </div>
+					</div>
 
 
 				</div>
 
 				<div id="form">
-					
-
+						
+				 form
 					
 				</div>
 				<div id="done">

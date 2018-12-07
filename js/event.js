@@ -12,6 +12,17 @@ var ahb_array=[
 {top:'17%',left:'90%'}]
 
 var nowpage="index";
+var swiper;
+
+var blurElement = {a:0};//start the blur at 0 pixels
+
+
+
+//here you pass the filter to the DOM element
+function applyBlur()
+{
+    TweenMax.set($(".swiper-container"), {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});  
+};
 $(document).ready(function() {
 
 
@@ -19,9 +30,17 @@ $(document).ready(function() {
     resize();
     
   }).resize();
+  
+  //填完wish後
+  $(".inputwish .btn").click(function(e) {
+      
+    	exit_event(function(){
 
-  init();
-  intro();
+
+    	})
+
+  });
+
 
 
 });
@@ -32,124 +51,79 @@ function resize(){
 }
 function init(){
 
-	$("#index").css({'display': 'block'});
-	$("#index .title .step1").each(function( index ) {
-		TweenMax.set($(this), {scale:0,opacity:1,rotationX:120, transformOrigin:"center top"});
-	});
-	$("#index .title .step2").each(function( index ) {
-		TweenMax.set($(this), {opacity:0,rotationX:120, transformOrigin:"center top"});
-	});
-    $("#index .btn").each(function( index ) {
-		TweenMax.set($(this), {opacity:0,rotationX:120, transformOrigin:"center top"});
-	});
-
-
-
+    intro();
 
 }
 ////首頁進場
 function intro(){
 
-$("#wrapper .content .inner").fadeIn(function(){
+	$("#wrapper .content .inner").fadeIn(function(){
+		
+		snow_init();
+		start_event();
 
-	
-	snow_init();
-	start_index();
-
-});
-
-
-}
-function start_index(){
-	init();
-	$(".ahb" ).each(function( index ) {
-	   TweenMax.set($(this), {left:ahb_array[index].left,scale:Math.random() * 0.6+0.2, top:"100%", opacity:1});
-	});
-	$("#snowContainer").fadeIn();
-
-	var time = 3;
-	var complete = function (e) {
-    	
-	};
-	$(".ahb" ).each(function( index ) {
-	   TweenMax.to($(this), time ,{delay:0.2*index, top:ahb_array[index].top, opacity:1, ease : Expo.easeOut,onComplete:complete($(this))});
 	});
 
 
-	setTimeout(function(){ 
-
-	$("#index .title .step1").each(function( index ) {
-		TweenMax.to($(this), 3 ,{delay:0.2*index,scale:1,rotationX:0, transformOrigin:"center top", opacity:1, ease: Elastic.easeOut});
-	});
-
-	 }, 2000);
-
-	$("#index .title .title04").addClass('animated infinite swing delay-5s');
-	
-	setTimeout(function() { 
-
-	$("#index .title .step2").each(function( index ) {
-		TweenMax.to($(this), 0.5 ,{delay:0.2*index, opacity:1,rotationX:0, transformOrigin:"center top", ease: Power2.easeOut});
-	});
-
-     }, 2500);
-	setTimeout(function() {
-		TweenMax.to($("#index .btn"), 0.5 ,{delay:0*index, opacity:1,rotationX:0, transformOrigin:"center top", ease: Power2.easeOut});
-     }, 3000);
-	//snowContainer
-	$(".snowContainer div" ).each(function( index ) {
-	   
-	});
-
-}
-//////index 退場
-function exit_index(callback){
-
-	var time = 4;
-	var complete = function (e) {
-    	
-	};
-	$(".ahb" ).each(function( index ) {
-	   TweenMax.to($(this), time ,{delay:0.01*index, top:'-80%', opacity:1, ease : Expo.easeOut,onComplete:complete($(this))});
-	});
-
-	$(".title .step1").each(function( index ) {
-		TweenMax.to($(this), 0.5 ,{delay:0.02*index,scale:0.5, opacity:0, ease: Power2.easeOut });
-	});
-	$(".title .step2").each(function( index ) {
-		TweenMax.to($(this), 1 ,{delay:0.2*index, opacity:0, ease: Power2.easeOut});
-	});
-	TweenMax.to($("#index .btn"), 1 ,{delay:0*index, opacity:0, ease: Power2.easeOut});
-
-	setTimeout(function(){ 
-
-		$("#index").fadeOut(function(){
-			callback();
-		})
-
-	 }, 1000);
-	
 }
 
 ////互動頁進場
 function start_event(){
+	$(".ahb_wish").removeClass("active");
+	TweenMax.set($(".swiper-container"), {top:0, opacity:1, opacity:1});
+	$(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeIn();
+	$("#snowContainer").fadeIn();
+	$(".swiper-button-next,.swiper-button-prev").fadeIn();
+	$("#event").fadeIn(function(){
 
-$("#event").fadeIn(function(){
+			swiper = new Swiper('.swiper-container', {
 
+		      pagination: {
+		        el: '.swiper-pagination'
+		      },
+		      navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		      },
+		    });
 
-
-});
-
+	});
 
 }
 
-function exit_event(){
+function exit_event(callback){
+
+	$(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeOut();
+    $(".ahb_wish").addClass("active");
+	TweenMax.to($(".swiper-container"), 2 ,{delay:0.5, top:'150px', opacity:1, ease : Expo.easeOut});
 
 
+	// $("#event").fadeOut(function(){
 
+	// 	 callback();
+
+	// });
+	//TweenMax.to(blurElement, 2, {a:20, onUpdate:applyBlur});
+
+	setTimeout(function(){ 
+
+	$("#event").fadeOut(function(){
+
+		
+		callback();
+
+	});
+
+	},1600);
+	
+	setTimeout(function(){ 
+
+
+	start_animate();
+	},1580);
+    
 
 }
-
 ///
 function changepage(e,callback){
 
@@ -171,9 +145,58 @@ function changepage(e,callback){
 
 			})
 		}
-
-
-
 	}
 
+}
+function start_animate(){
+
+	 TweenMax.set($(".user_ahb"), {top: '0px', opacity:1, opacity:1});
+	
+	$("#animate").fadeIn(function(){
+		TweenMax.to($(".user_ahb"), 2 ,{ top:'150px', opacity:1, ease : Expo.easeOut});
+	});
+
+    // setTimeout(function(){ 
+
+    // 	TweenMax.to($(".user_ahb"), 2 ,{ top:'-380px', opacity:1, ease : Expo.easeOut,onComplete:exit_animate()});
+
+
+    // },3000);
+
+
+
+    
+
+}
+function exit_animate(){
+
+	$("#animate").fadeOut(function(){
+
+		start_form();
+	});
+
+}
+
+
+function start_form(){
+
+	$("#form").fadeIn(function(){
+
+		
+	});
+
+}
+function exit_form(){
+
+
+}
+
+function start_done(){
+
+
+}
+
+function exit_done(){
+
+	
 }

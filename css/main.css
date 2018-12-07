@@ -5,7 +5,10 @@
     height: 100%;
     min-height: 519px;
 }
+#index{
 
+    display: none;
+}
 #index .title{
 
 	position: relative;

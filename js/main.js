@@ -20,22 +20,17 @@ $(document).ready(function() {
     
   }).resize();
 
-  init();
+  //init();
 
-  $(".is18btn.active").click(function(e) {
-  		
-  		$("#is18").fadeOut(function(){
 
-  				intro();
-  		});
-
-  });
   ///進互動
   $("#index .btn").click(function(e) {
   		
   			changepage("event",function(){
 
-  				start_event();
+  				window.open('./event.php',
+		  '_self' // <- This is what makes it open in a new window.
+		);
   			})
 
   });
@@ -53,6 +48,7 @@ function resize(){
 }
 function init(){
 
+	
 	$("#index").css({'display': 'block'});
 	$("#index .title .step1").each(function( index ) {
 		TweenMax.set($(this), {scale:0,opacity:1,rotationX:120, transformOrigin:"center top"});
@@ -63,9 +59,6 @@ function init(){
     $("#index .btn").each(function( index ) {
 		TweenMax.set($(this), {opacity:0,rotationX:120, transformOrigin:"center top"});
 	});
-
-
-
 
 }
 ////首頁進場

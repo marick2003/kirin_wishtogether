@@ -1,7 +1,7 @@
 #wrapper .content .inner {
     width: 310px;
     height: 350px;
-     top: 0px; 
+     top: 20px; 
     left: 50%;
      margin: 0px 0 0 0px; 
      margin-top: 0px; 
@@ -18,14 +18,53 @@
     /*margin-top: -80px;*/
 }
 
-#event .ahb_wish{
+.ahb_wish{
     position: relative;
     width: 185px;
     height: 345px;
     margin: 0 auto;
 
 }
-#event .ahb_wish img{
+.ahb_wish::before{
+    content: "";
+    width: 73px;
+    height: 41px;
+    top: 315px;
+    left: 60px;
+    position: absolute;
+    background-image: url(../images/showdow.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-animation: scaling 2s ease-in-out infinite alternate;
+    animation: scaling 2s ease-in-out infinite alternate;
+}
+.ahb_wish.active::before{
+
+    display: none;
+}
+
+
+@-webkit-keyframes scaling {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.5);
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+
+.ahb_wish img{
     position: absolute;
     top: 20px;
    -webkit-animation: float 4s ease-in-out infinite;
@@ -57,7 +96,7 @@
 
 
 }
-.inputwish .text:nth-child(2) input{
+.inputwish .text:nth-child(2) textarea{
     width: 220px;
     height: 100px;
     margin-bottom: 20px;
@@ -69,4 +108,46 @@
     width: 247px;
     margin: 0 auto;
     margin-bottom: 79px; 
+}
+
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+
+    background-image: url(../images/swiper_arrow.png);
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+
+    background-image: url(../images/swiper_arrow.png);
+    transform: rotateY(180deg); 
+}
+
+
+#animate{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0px;
+    left: 0px;
+}
+
+.user_ahb .ahb_wish{
+
+
+
+    position: relative;
+   margin: 0 auto;
+    top: 150px;
+
+}
+.user_ahb .ahb_wish::before{
+
+    display: none;
+}
+
+#form{
+
+    position: relative;
+    display: none;
+
 }
