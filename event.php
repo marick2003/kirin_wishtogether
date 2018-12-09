@@ -18,6 +18,8 @@
 	<script type="text/javascript" src="js/libs/swiper.min.js" ></script>
 	<script type="text/javascript" src="js/libs/loading.js" ></script>
 	<script type="text/javascript" src="js/common.js" ></script>
+	<script type="text/javascript" src="js/libs/tw-city-selector.min.js" ></script>
+	
 	<script type="text/javascript" src="js/event.js" ></script>
 </head>
 <body >
@@ -160,23 +162,89 @@
 				</div>
 
 				<div id="animate">
+				    <canvas id="celebration"></canvas>	
 					<div class="user_ahb">
 						<div class="ahb_wish">
-					      	<img src="images/ahb02.png">
+							<div class="item">
+								<img src="images/ahb01.png">
+							</div>
+					     </div>
+					     <div class="wish_b01">
+					     	<!-- <img src="images/event_b01.png"> -->
+					     </div>
+					     <div class="wish_b02">
+					     	<!-- <img src="images/event_b02.png"> -->
 					     </div>
 					</div>
-
-
+					
+		
 				</div>
 
 				<div id="form">
+					<div class="title">
+						<img src="images/form_title.png">
+					</div>
+					<div class="award">
+						<img src="images/form_award.png">
+					</div>
+					<div class="tip">
+						<img src="images/form_tip.png">
+					</div>
+					<div class="form_container">
+						<div class="startform">
+						<input class="name form_style" type="text" placeholder="">
+						<input class="tel form_style" type="tel" placeholder="" maxlength="10">
+						<input class="email form_style" type="email" placeholder="">
+						<div class="my-selector-c">
+							<div>
+								<select class="county form_style"></select>
+							</div>
+							<div>
+								<select class="district form_style"></select>
+							</div>						
+						</div>
+						<input class="address form_style" type="text" placeholder="">
+						<div class="check_btn"></div>
+						<div class="rule_btn">
+							<a href="https://www.kirin.com.tw/privacy.php" target="_blank"></a>
+						</div>
 						
-				 form
+					</div>
+					</div>
+					<div class="btn">
+						<img src="images/form_btn.png">
+					</div>
+				 		
 					
 				</div>
 				<div id="done">
-					
-
+					<div class="title">
+						<img src="images/done_title.png">
+					</div>
+					<div class="fb_btn">
+						<img src="images/done_btn1.png">
+					</div>
+					<div class="again_btn">
+						<img src="images/done_btn2.png">
+					</div>
+					<div class="date_text">
+						<img src="images/done_date.png">
+					</div>
+					<div class="done_txt2">
+						<img src="images/done_txt2.png">
+					</div>
+					<div class="site_btn">
+						<img src="images/done_btn3.png">
+					</div>
+					<div class="done_txt1">
+						<img src="images/done_txt1.png">
+					</div>
+					<div class="line_btn">
+						<img src="images/done_btn4.png">
+					</div>
+					<div class="qrcode">
+						<img src="images/done_qrcode.jpg">
+					</div>
 					
 				</div>
 			</div>

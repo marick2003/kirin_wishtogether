@@ -67,9 +67,13 @@
 .ahb_wish img{
     position: absolute;
     top: 20px;
-   -webkit-animation: float 4s ease-in-out infinite;
-   animation: float 4s ease-in-out infinite;
 
+
+}
+.swiper-container .ahb_wish img{
+
+    -webkit-animation: float 4s ease-in-out infinite;
+   animation: float 4s ease-in-out infinite; 
 }
 .wishtitle{
 
@@ -130,24 +134,250 @@
     top: 0px;
     left: 0px;
 }
+#celebration{
 
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    margin-left: -185px;
+}
+.user_ahb{
+
+    position: relative;
+    margin: 0 auto;
+}
 .user_ahb .ahb_wish{
 
 
 
-    position: relative;
+   position: relative;
    margin: 0 auto;
-    top: 150px;
+   top: 0px;
+   -webkit-animation: float 4s ease-in-out infinite;
+   animation: float 4s ease-in-out infinite;
 
 }
 .user_ahb .ahb_wish::before{
 
     display: none;
 }
+.wish_b01{
+    position: relative;
+    width: 260px;
+    height: 71px;
+    margin: 0 auto;
+    margin-top: -25px;
+    background-image: url(../images/event_b01.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 
+}
+.wish_b02{
+    position: relative;
+    width: 260px;
+    height: 157px;
+    margin: 0 auto;
+    background-image: url(../images/event_b02.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%; 
+}
 #form{
 
     position: relative;
     display: none;
 
 }
+.form_container{
+
+
+}
+#form .title{
+
+    width: 230px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+#form .award{
+    width: 282px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: coral;
+    margin-bottom: 25px;
+
+}
+#form .tip{
+    width: 73px;
+    margin: 0 auto;
+   margin-bottom: 25px;
+
+}
+#form .form_container{
+
+    width: 325px;
+    height: 265px;
+    margin: 0 auto;
+    background-image: url(../images/form_bg.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    margin-bottom: 25px;
+
+}
+#form .btn{
+
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.check_btn{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 126px;
+    left: 34px;
+    background-color: #ffffff;
+    cursor: pointer;
+    
+   }
+.check_btn.check{
+    background-color: #000;
+}
+#form .name{
+
+    position: absolute;
+    top: 225px;
+    left: 87px;
+}
+#form .tel{
+
+    position: absolute;
+    top: 267px;
+    left: 87px;
+}
+#form .email{
+
+    position: absolute;
+    top: 310px;
+    left: 87px;
+}
+#form .address{
+
+position: absolute;
+    top: 395px;
+    left: 87px;
+}
+
+#form .my-selector-c{
+
+    position: absolute;
+    top: 342px;
+    left: 59px;
+    width: 309px;
+}
+#form .my-selector-c select{
+    height: 41px;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    width: 138px;
+    margin-top: 8px;
+    margin-right: 6px;
+    text-indent: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Noto Sans TC';
+  }
+#form .my-selector-c div{
+    float: left;
+    margin-right: -20px;
+  }
+#form .send_btn{
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    margin-left: -120px;
+    cursor: pointer;
+}
+#form .rule_btn{
+
+    width: 78px;
+    height: 28px;
+   /* background-color: antiquewhite;*/
+    position: absolute;
+    bottom: 111px;
+    left: 180px;
+}
+.form_style {
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Noto Sans TC';
+    color: #000000;
+    /* font-family: Microsoft JhengHei,sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    outline: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    z-index: 0;
+    background-color: transparent;
+  }
+#done{
+    display: none;
+}
+  #done .title{
+
+    position: relative;
+    width: 288px;
+    margin: 0 auto;
+    margin-bottom: 25px; 
+  }
+  #done .fb_btn , .again_btn {
+
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 25px; 
+  }
+  .date_text{
+
+    width: 310px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+  .done_txt1{
+
+    width: 216px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .done_txt2{
+
+    width: 75px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .site_btn ,.line_btn{
+
+    width: 272px;
+    margin: 0 auto;
+    margin-bottom: 44px; 
+  }
+  .qrcode{
+    width: 125px;
+    margin: 0 auto;
+    margin-bottom: 104px;
+  }

@@ -111,7 +111,55 @@ function createAsnow()
 /* Calls the init function when the "Falling snow" page is full loaded */
  //window.addEventListener('load', init, false);
 
-function clears(){
+function clearsnow(){
 
+        $("#snowContainer").remove();
     
 }
+
+function addseed(){
+
+
+//$(".snowclass")
+ //声明定时器运行次数
+    var index=-1;
+    //声明步长值step
+    var step;
+    //声明当前值cur
+    var cur;
+    //声明目标值
+    var target = 0.2;
+    
+
+    $(".snowclass").each(function( index ) {
+
+            
+       //var t= $(this);
+       var q=$(this);
+       var t;
+      // clearInterval(t.timer);
+       t=setInterval(function(){
+        //更新定时器的工作次数
+        index++;
+        //更新步长值
+        step = 0.04*(2*index+1);
+        //更新当前值
+        cur = 10;
+        //若步长设置值使得元素超过目标点时，将步长设置值更改为目标点值 - 当前值
+        //test.style.left = cur + step + 'px';
+        console.log(cur-step);
+        //{'width': (percent + '%')}
+        q.css({'animation-duration': cur-step+'s'});
+        if(cur-step<=target){
+            clearInterval(t);
+        }
+        //更新left值
+        
+        //当元素到达目标点时，停止定时器
+         
+    },20);
+
+
+    });
+
+} 
