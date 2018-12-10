@@ -32,8 +32,8 @@ function getWindowInfo(){
       }
 $( document ).ready(function() {
 	
-
-  loading();
+   loading();  
+  
   $(".menu-toggle").on('click', function() {
 
     $(this).toggleClass("active");

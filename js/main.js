@@ -14,7 +14,7 @@ var ahb_array=[
 var nowpage="index";
 $(document).ready(function() {
 
-
+	
   $(window).resize(function() {
     resize();
     
