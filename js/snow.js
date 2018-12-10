@@ -124,7 +124,7 @@ function createAsnow()
 
 function clearsnow(){
 
-        $("#snowContainer").remove();
+        $("#snowContainer").empty();
     
 }
 
@@ -153,7 +153,7 @@ function addseed(){
         //更新定时器的工作次数
         index++;
         //更新步长值
-        step = 0.02*(2*index+1);
+        step = 0.04*(2*index+1);
         //更新当前值
         
         cur = 9;
@@ -170,7 +170,7 @@ function addseed(){
         
         //当元素到达目标点时，停止定时器
          
-    },10);
+    },20);
 
 
     });

@@ -2,8 +2,8 @@
 <html>
 <head>
 	<?php include 'include/header.php';?>
-	<link href="css/event.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="js/event.js" ></script>
+	<link href="css/event.css?v=<?php echo(ceil(time() / 600)) ?>" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/event.js?v=<?php echo(ceil(time() / 600)) ?>" ></script>
 </head>
 <body >
 <!-- shell-->
@@ -65,11 +65,11 @@
 					 	
 					     <div class="text">
 					     	<p>暱稱：</p>
-					     	<input class="ipt-text" type="text" name="" maxlength="10" placeholder="暱稱10字內...">
+					     	<input class="ipt-text nickname" type="text" name="" maxlength="10" placeholder="暱稱10字內...">
 					     </div>
 					     <div class="text">
 					     	<p>你的願望：</p>
-					     	<textarea class="ipt-text" type="text" name="" maxlength="50" placeholder="願望50字內..."></textarea>
+					     	<textarea class="ipt-text wishtxt" type="text" name="" maxlength="50" placeholder="願望50字內..."></textarea>
 					     </div>
 						<div class="btn">
 							<img src="images/index_btn.png">

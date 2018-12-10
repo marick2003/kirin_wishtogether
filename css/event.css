@@ -177,21 +177,32 @@
     height: 71px;
     margin: 0 auto;
     margin-top: -25px;
+    text-align: center;
     background-image: url(../images/event_b01.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%;
 
 }
+.wish_b01 p{
+    line-height: 75px;
+    
+}
 .wish_b02{
     position: relative;
     width: 260px;
     height: 157px;
     margin: 0 auto;
+    text-align: center;
     background-image: url(../images/event_b02.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%; 
+}
+.wish_b02 p{
+    line-height: 25px;
+    padding: 15px 5px;
+
 }
 #form{
 

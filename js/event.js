@@ -16,6 +16,7 @@ var swiper;
 
 var blurElement = {a:0};//start the blur at 0 pixels
 var windowWidth, windowHeight;
+var nickname,wishtxt,wishnum;
 
 function getWindowInfo(){
 
@@ -52,11 +53,22 @@ $(document).ready(function() {
   
   //填完wish後
   $(".inputwish .btn").click(function(e) {
-      
-    	exit_event(function(){
+        
+      if($(".nickname").val()!="" && $(".wishtxt").val()!="")
+      {
+        nickname=$(".nickname").val();
+        wishtxt=$(".wishtxt").val();
+        exit_event(function(){
 
 
-    	})
+        })
+
+      }else{
+
+        alert("請輸入暱稱與願力");
+      }
+
+    	
 
   });
 
@@ -142,6 +154,7 @@ function start_event(){
         swiper.on('slideChange', function () {
 
             console.log(swiper.realIndex);
+         wishnum=swiper.realIndex;
         $(".wishtitle img").removeClass("active");
         $(".wishtitle img").eq(swiper.realIndex).addClass("active");
 
@@ -185,30 +198,10 @@ function exit_event(callback){
 
 }
 ///
-function changepage(e,callback){
 
-	if(e!=nowpage){
-
-		if(nowpage=="index"){
-
-			exit_index(function(){
-				nowpage=e;
-				callback();
-
-			})
-		}
-		if(nowpage=="event"){
-
-			exit_index(function(){
-				nowpage=e;
-				callback();
-
-			})
-		}
-	}
-
-}
 function start_animate(){
+  $('.wish_b01 p').append(nickname);
+  $(".wish_b02 p").append(wishtxt);
 
 	 TweenMax.set($(".user_ahb"), {top: '0px', opacity:1, opacity:1});
 	
@@ -238,7 +231,6 @@ function start_animate(){
     
 
 	setTimeout(function(){
-
 		
 		TweenMax.to($(".user_ahb"), 4 ,{delay:2, top:'-707px', opacity:1, ease : Expo.easeOut});
 	
@@ -365,13 +357,9 @@ Particle.prototype = {
     this.ctx.lineTo(this.h*0.5, this.h*0.5 );
     this.ctx.fill();
     
-    
-    
-    
-
+  
     this.ctx.restore();
-    //this.ctx.rotate((Math.random()*180)*Math.PI/180);
-    //this.ctx.restore();
+
   }
 };
 
@@ -418,8 +406,8 @@ function CelebrationCanvas(canvas, width, height) {
 
     if (checkParticlesComplete()) {
       // reset
-      // particles.length = 0;
-      // createParticles();
+       particles.length = 0;
+       createParticles();
       // setTimeout(function(){
       //   animate();
       // }, (Math.random()*2000));
