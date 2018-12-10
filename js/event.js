@@ -389,7 +389,7 @@ function CelebrationCanvas(canvas, width, height) {
 
   function createParticles() {
     for (var i = 0; i < 128; i++) {
-      var p0 = new Point(width * 0.5, height * 0.5);
+      var p0 = new Point(width * 0.5, height * 0.2);
       var p1 = new Point(Math.random() * width, Math.random() * height);
       var p2 = new Point(Math.random() * width, Math.random() * height);
       var p3 = new Point(Math.random() * width, height + 150);

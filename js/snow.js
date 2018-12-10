@@ -6,6 +6,7 @@ Copyright (C) 2012 Web3Canvas. All Rights Reserved.
 /* Define the number of snow to be used in the animation */
 const NUMBER_OF_snow = 20;
 var seed_array=[];
+var seed_array2=[];
 /* 
     Called when the "Falling snow" page is completely loaded.
 */
@@ -56,7 +57,9 @@ function pixelValue(value)
 */
 
 function durationValue(value)
-{
+{       
+
+   seed_array.push(value);
 
     return value + 's';
 }
@@ -101,7 +104,7 @@ function createAsnow()
     // var lastIndex = str.lastIndexOf(" ");
 
     //  str = str.substring(0, lastIndex);
-    // seed_array.push(str);
+   
 
     var snowDelay = durationValue(randomFloat(0, 5));
     snowDiv.style.webkitAnimationDelay = snowDelay + ', ' + snowDelay;
@@ -127,7 +130,7 @@ function clearsnow(){
 
 function addseed(){
 
-
+//console.log(seed_array);
 //$(".snowclass")
  //声明定时器运行次数
     var index=-1;
@@ -136,7 +139,7 @@ function addseed(){
     //声明当前值cur
     var cur;
     //声明目标值
-    var target = 0.2;
+    var target = 0.4;
     
 
     $(".snowclass").each(function( index ) {
@@ -153,8 +156,8 @@ function addseed(){
         step = 0.02*(2*index+1);
         //更新当前值
         
-        cur = 8;
-        console.log(seed_array[index]);
+        cur = 9;
+        //console.log(seed_array[index]);
         //若步长设置值使得元素超过目标点时，将步长设置值更改为目标点值 - 当前值
         //test.style.left = cur + step + 'px';
         //console.log(cur-step);

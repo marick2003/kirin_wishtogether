@@ -34,6 +34,8 @@
 
 	<script type="text/javascript" src="js/libs/jquery-1.11.2.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	
+	<script src="js/libs/tw-city-selector.min.js"></script>
 	<script src="js/snow.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/swiper.min.js" ></script>
 	<script type="text/javascript" src="js/libs/loading.js" ></script>

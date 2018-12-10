@@ -89,9 +89,11 @@
 					     </div>
 					     <div class="wish_b01">
 					     	<!-- <img src="images/event_b01.png"> -->
+					     	<p></p>
 					     </div>
 					     <div class="wish_b02">
 					     	<!-- <img src="images/event_b02.png"> -->
+					     	<p></p>
 					     </div>
 					</div>
 					<canvas id="celebration"></canvas>
