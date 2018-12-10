@@ -93,3 +93,38 @@ window.onresize = function (event){
 };
 
 onresize();
+
+
+function sendEvent(category, action, label) {
+    if (typeof(gtag) != 'undefined') {
+        gtag('event', action, {
+            'event_category': category+"/手機",
+            'event_label': label,
+            'value': 0
+        });
+        log('event: ' + category+"/手機" + ', ' + action + ', ' + label);
+    }
+}
+
+function sendPage(title) {
+    if (typeof(gtag) != 'undefined') {
+        gtag('config', GA_TRACKING_ID, {
+            'page_title' : title+'/m'
+            // 'page_path': '/home'
+        });
+        log('pageview: ' + title+'/m');
+    }
+}
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);  
+    if (r != null)
+        return unescape(r[2]);
+    return null; 
+}
+function log($obj){
+    if(window.console){
+        window.console.log($obj);
+    }
+}
