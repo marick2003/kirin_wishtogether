@@ -72,17 +72,26 @@
 }
 .swiper-container .ahb_wish img{
 
-    -webkit-animation: float 4s ease-in-out infinite;
+  -webkit-animation: float 4s ease-in-out infinite;
    animation: float 4s ease-in-out infinite; 
 }
 .wishtitle{
-
     position: relative;
     width: 230px;
+    height: 20px;
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 20px;
 }
+.wishtitle img{
+    position: absolute;
+    opacity: 0;
+}
+.wishtitle img.active{
+    opacity: 1;
+
+}
+
 .inputwish p{
 
     float: left;
@@ -97,13 +106,14 @@
     height: 24px;
     margin-bottom: 20px;
     margin-left: 0px;
-
+    padding-left: 5px;
 
 }
 .inputwish .text:nth-child(2) textarea{
     width: 220px;
     height: 100px;
     margin-bottom: 20px;
+    padding-left: 5px;
     
 }
 .inputwish .btn{
@@ -231,7 +241,7 @@
 
     width: 250px;
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: 95px;
 }
 
 .check_btn{
@@ -277,7 +287,7 @@ position: absolute;
     position: absolute;
     top: 342px;
     left: 59px;
-    width: 309px;
+    width: 270px;
 }
 #form .my-selector-c select{
     height: 41px;
@@ -313,8 +323,10 @@ position: absolute;
     left: 180px;
 }
 .form_style {
+    width: 228px;
+
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 0px;
     line-height: 35px;
     font-size: 18px;
     font-weight: 500;

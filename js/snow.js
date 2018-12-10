@@ -5,12 +5,13 @@ Copyright (C) 2012 Web3Canvas. All Rights Reserved.
 
 /* Define the number of snow to be used in the animation */
 const NUMBER_OF_snow = 20;
-
+var seed_array=[];
 /* 
     Called when the "Falling snow" page is completely loaded.
 */
 function snow_init()
 {
+    seed_array=[];
     /* Get a reference to the element that will contain the snow */
     var container = document.getElementById('snowContainer');
     /* Fill the empty container with new snow */
@@ -56,6 +57,7 @@ function pixelValue(value)
 
 function durationValue(value)
 {
+
     return value + 's';
 }
 
@@ -94,6 +96,12 @@ function createAsnow()
     var spinDuration = durationValue(randomFloat(4, 8));
     /* Set the -webkit-animation-duration property with these values */
     snowDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+    snowDiv.seed=fadeAndDropDuration;
+    // var str = fadeAndDropDuration;
+    // var lastIndex = str.lastIndexOf(" ");
+
+    //  str = str.substring(0, lastIndex);
+    // seed_array.push(str);
 
     var snowDelay = durationValue(randomFloat(0, 5));
     snowDiv.style.webkitAnimationDelay = snowDelay + ', ' + snowDelay;
@@ -142,12 +150,14 @@ function addseed(){
         //更新定时器的工作次数
         index++;
         //更新步长值
-        step = 0.04*(2*index+1);
+        step = 0.02*(2*index+1);
         //更新当前值
-        cur = 10;
+        
+        cur = 8;
+        console.log(seed_array[index]);
         //若步长设置值使得元素超过目标点时，将步长设置值更改为目标点值 - 当前值
         //test.style.left = cur + step + 'px';
-        console.log(cur-step);
+        //console.log(cur-step);
         //{'width': (percent + '%')}
         q.css({'animation-duration': cur-step+'s'});
         if(cur-step<=target){
@@ -157,7 +167,7 @@ function addseed(){
         
         //当元素到达目标点时，停止定时器
          
-    },20);
+    },10);
 
 
     });

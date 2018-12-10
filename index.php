@@ -21,75 +21,9 @@
 	<script type="text/javascript" src="js/main.js" ></script>
 </head>
 <body >
-	<header>
-		<div class="center">
-			<div class="logo">
-				<img src="images/logo.png">
-			</div>
-			<div class="menu-toggle">
-		    	<div class="one"></div>
-		    	<div class="two"></div>
-		    	<div class="three"></div>
-	   		</div>
-		</div>	
-	</header>
-<div id='menu'>
-	<div class='main'>
-		<ul class='menu'>
-			<li class='btn bounceBtn'>
-				<a href='edit.php'>
-					<div class='center'>
-						<div class='main'>
-							<div class='text'></div>
-						</div>
-					</div>
-				</a>
-			</li>
-			<li class='btn bounceBtn'>
-				<a href='card-review.php'>
-					<div class='center'>
-						<div class='main'>
-							<div class='text'></div>
-						</div>
-					</div>
-				</a>
-			</li>
-			<li class='btn bounceBtn'>
-				<a href='edit.php?page=2017word'>
-					<div class='center'>
-						<div class='main'>
-							<div class='text'></div>
-						</div>
-					</div>
-				</a>
-			</li>
-		
-			
-		</ul>
-		<div class='social'>
-			<ul>
-				<li class='btn bounceBtn'>
-					<a href='https://www.instagram.com/kirin_bar_beer/' target='_blank'>
-						<div class='center'>
-							<div class='main'>
-								<div class='text'></div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class='btn bounceBtn'>
-					<a href='https://www.facebook.com/kirinbar/' target='_blank'>
-						<div class='center'>
-							<div class='main'>
-								<div class='text'></div>
-							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+
+<!-- shell-->
+<?php include 'include/shell.php';?>
 	<div id="wrapper"> 
 		<div class="CanvasImg"></div>
 		<?php include 'include/loading.php';?>
@@ -166,12 +100,8 @@
 
 		
 	</div>
-	<footer>
-		<div class="center">
-			<img class="footer-img01" src="images/footer-img01.png">
-		</div>
-
-	</footer>
+	<!-- footer-->
+	<?php include 'include/footer.php';?>
 
 </body>
 </html>

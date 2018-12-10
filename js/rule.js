@@ -66,26 +66,9 @@ $(document).ready(function() {
     	exit_form(function(){
 
     			start_done();
-
-    	});
-
-  });
-  $(".check_btn").click(function(e) {
-
+    	})
 
   });
-
-  $(".again_btn").click(function(e) {
-
-      exit_done(function(){
-
-          intro();
-
-      });
-
-
-
-   });
 
 
 
@@ -103,11 +86,10 @@ function init(){
 ////首頁進場
 function intro(){
 
-	$("#wrapper .content .inner,#snowContainer,#event").fadeIn(function(){
+	$("#wrapper .content .inner").fadeIn(function(){
 		
 		snow_init();
 		start_event();
-    
 
 	});
 
@@ -116,13 +98,11 @@ function intro(){
 
 ////互動頁進場
 function start_event(){
- 
 	$(".ahb_wish").removeClass("active");
 	TweenMax.set($(".swiper-container"), {top:0, opacity:1, opacity:1});
 	$(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeIn();
 	$("#snowContainer").fadeIn();
 	$(".swiper-button-next,.swiper-button-prev").fadeIn();
-
 	$("#event").fadeIn(function(){
 
 			swiper = new Swiper('.swiper-container', {
@@ -155,7 +135,7 @@ function start_event(){
 
 function exit_event(callback){
 
-	  $(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeOut();
+	$(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeOut();
     $(".ahb_wish").addClass("active");
 	  //TweenMax.to($(".swiper-container"), 1 ,{delay:0.5, top:'0px', opacity:1, ease : Expo.easeOut});
 
@@ -171,6 +151,7 @@ function exit_event(callback){
 
 	$("#event").fadeOut(function(){
 
+		
 		callback();
 
 	});
@@ -179,7 +160,8 @@ function exit_event(callback){
 	
 	setTimeout(function(){ 
 
-	 start_animate();
+
+	start_animate();
 	},500);
     
 
@@ -230,19 +212,14 @@ function start_animate(){
 
 	},2000);
 
-  setTimeout(function(){
 
-    addseed();
-
-  },3000);
-    
 
 	setTimeout(function(){
 
-		
-		TweenMax.to($(".user_ahb"), 4 ,{delay:2, top:'-707px', opacity:1, ease : Expo.easeOut});
+		addseed();
+		TweenMax.to($(".user_ahb"), 5 ,{delay:3, top:'-707px', opacity:1, ease : Expo.easeOut});
 	
-	},3500);
+	},4000);
 
     setTimeout(function(){ 
 
@@ -352,7 +329,7 @@ Particle.prototype = {
   draw: function() {
     this.ctx.save();
     this.ctx.translate(this.x, this.y);
-    this.ctx.rotate((Math.random()*180)*Math.PI/180);
+    this.ctx.rotate(this.r);
     this.ctx.scale(1, this.sy);
 
     this.ctx.fillStyle = this.color;
@@ -370,8 +347,6 @@ Particle.prototype = {
     
 
     this.ctx.restore();
-    //this.ctx.rotate((Math.random()*180)*Math.PI/180);
-    //this.ctx.restore();
   }
 };
 
@@ -408,7 +383,6 @@ function CelebrationCanvas(canvas, width, height) {
     ctx.clearRect(0, 0, width, height);
     particles.forEach(function(p) {
       p.draw();
-
     });
   }
 

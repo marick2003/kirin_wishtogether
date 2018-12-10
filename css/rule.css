@@ -1,0 +1,20 @@
+#wrapper .content .inner {
+    width: 310px;
+    height: 350px;
+     top: 20px; 
+    left: 50%;
+     margin: 0px 0 0 0px; 
+     margin-top: 0px; 
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: -155px;
+    position: absolute;
+    display: none;
+}
+#rule{
+
+    position: relative;
+    width: 325px;
+    
+    /*margin-top: -80px;*/
+}
