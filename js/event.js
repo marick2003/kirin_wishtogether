@@ -13,10 +13,10 @@ var ahb_array=[
 
 var nowpage="index";
 var swiper;
-
+var form_final;
 var blurElement = {a:0};//start the blur at 0 pixels
 var windowWidth, windowHeight;
-var nickname,wishtxt,wishnum;
+var nickname,wishtxt,wishnum=1;
 
 function getWindowInfo(){
 
@@ -72,36 +72,81 @@ $(document).ready(function() {
 
   });
 
+  $(".check_btn").click(function(){
 
-  $("#form .btn").click(function(e) {
+      $( this ).toggleClass( "check" );
+                         
+   });
+  $(".fb_btn").click(function(){
+                
+
+
+            FB.ui({
+            method: 'feed',
+            link: 'https://www.kirin.com.tw/barbeer/event/wishtogether/2018/demo/share.php' + '?p='+nickname,
+            // picture: 'http://www.newbalance.com.tw/event/2017/mybetaword/uploads/'+save_pic_url
+            name:"【全員發願升空Bar】熱血發射你的 2019 新心願",
+             description: "跟著"+nickname+"發新願，抽日本九州機票 & 威秀限量電影票"
+          }, function(response) {
+
+            //console.log(response);
+               if (response && !response.error_message) {
+                      
+                        
+                    }
+
+          });
+
+
+
+    });
+
+  $("#form .btn").click(function(){
+
+          if(check_form() && form_final){
+                form_final=false;
+               //sendEvent('填寫資料＿完成', '點選＿填寫資料_完成', 'KOL');
+                var _str="name="+$(".startform .name").val()+"&phone="+$(".startform .tel").val()+"&email="+$('.startform .email').val()+"&address="+$(".startform .county").val()+" "+$(".startform .district").val()+" "+$('.startform .address').val()+"&type="+wishnum+"&nickname="+nickname+"&wish="+wishtxt;
+                $.ajax({
+                            type: "POST",
+                            url: "../api/sendForm.php",
+                            data:_str,
+                            dataType: "text",
       
-    	exit_form(function(){
+                            error: function(xhr) {
+      
+                              console.log(xhr);
+                       
+                          },
+                            success: function(response) {
+                                form_final=true;
+                             console.log(response);
+                             if(response.slice(4)=='yes'){
+                                 
+                               exit_form(function(){
 
-    			start_done();
+                                  start_done();
 
-    	});
+                                 });
 
-  });
-  $(".check_btn").click(function(e) {
+                             }  
+                             
+                        }
+                       
+                  }); 
+         
+                
+           }
 
-
-  });
-
-  $(".again_btn").click(function(e) {
+    });
+$(".again_btn").click(function(e) {
 
       exit_done(function(){
-
           intro();
-
       });
-
-
-
    });
 
-
-
-});
+  });
 
 function resize(){
 
@@ -116,11 +161,9 @@ function init(){
 function intro(){
 
 	$("#wrapper .content .inner,#snowContainer,#event").fadeIn(function(){
-		
+		form_final=true;
 		snow_init();
 		start_event();
-    
-
 	});
 
 
@@ -150,7 +193,7 @@ function start_event(){
 
         $(".wishtitle img").removeClass("active");
         $(".wishtitle img").eq(0).addClass("active");
-    
+        wishnum=swiper.realIndex;
         swiper.on('slideChange', function () {
 
             console.log(swiper.realIndex);
@@ -182,16 +225,13 @@ function exit_event(callback){
 
 	setTimeout(function(){ 
 
-	$("#event").fadeOut(function(){
-
-		callback();
-
-	});
+	   $("#event").fadeOut(function(){
+		    callback();
+	   });
 
 	},500);
 	
 	setTimeout(function(){ 
-
 	 start_animate();
 	},500);
     
@@ -200,16 +240,20 @@ function exit_event(callback){
 ///
 
 function start_animate(){
+
+  $('.wish_b01 p ,.wish_b02 p').empty();
   $('.wish_b01 p').append(nickname);
   $(".wish_b02 p").append(wishtxt);
+  $(".user_ahb .ahb_wish img").removeClass("active");
+  $(".user_ahb .ahb_wish img").eq(wishnum).addClass("active");
 
-	 TweenMax.set($(".user_ahb"), {top: '0px', opacity:1, opacity:1});
+
+	TweenMax.set($(".user_ahb"), {top: '0px', opacity:1, opacity:1});
 	
 	$("#animate").fadeIn(100,function(){
 		TweenMax.to($(".user_ahb"), 2 ,{ opacity:1, ease : Expo.easeOut});
 	});
 	var t=0;
-	
 	TweenMax.set($('.wish_b01'), {opacity:0,rotationX:120, transformOrigin:"center top"});
 	TweenMax.set($('.wish_b02'), {opacity:0,rotationX:120, transformOrigin:"center top"});
 
@@ -248,9 +292,6 @@ function start_animate(){
 
     },7000);
 
-
-
-    
 
 }
 function exit_animate(){
@@ -466,3 +507,55 @@ function cubeBezier(p0, c0, c1, p1, t) {
 
 	return p;
 }
+
+
+
+
+   function check_form(){
+
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            var reg2 =/[a-zA-Z0-9]/g;
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var error=[];
+    
+            if($(".startform .name").val()=="")
+            {
+                alert('請填寫姓名');
+                return false;
+            }else if($('.startform .tel').val().length!=10)
+            {
+                 alert('請填寫正確手機格式');
+                return false;
+            }else if(!/^\d+$/.test($('.startform .tel').val()) ){
+    
+                alert('請填寫正確手機格式');
+                return false;
+              
+            }else if(!re.test($('.startform .email').val())){
+    
+                alert('請填寫正確Email');
+                return false;
+              
+            }else if($(".startform .county").prop('selectedIndex')<=0){
+    
+                alert("請選擇城市");
+                return false;
+    
+            }else if($(".startform .district").prop('selectedIndex')<=0){
+    
+                alert("請選擇區域");
+                
+                return false;
+            }else if($('.startform .address').val()=="")
+            {
+    
+                 alert("請填寫地址");
+                 return false;
+            }else if(!$(".startform .check_btn").hasClass("check")){
+
+                alert("請勾選同意活動辦法");
+                return false;
+            }
+    
+            return true;
+        }

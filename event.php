@@ -83,9 +83,13 @@
 				    
 					<div class="user_ahb">
 						<div class="ahb_wish">
-							<div class="item">
+							
 								<img src="images/ahb01.png">
-							</div>
+							    <img src="images/ahb02.png">
+							    <img src="images/ahb03.png">
+							    <img src="images/ahb04.png">
+							    <img src="images/ahb05.png">
+
 					     </div>
 					     <div class="wish_b01">
 					     	<!-- <img src="images/event_b01.png"> -->
@@ -114,7 +118,7 @@
 					<div class="form_container">
 						<div class="startform">
 						<input class="name form_style" type="text" placeholder="">
-						<input class="tel form_style" type="tel" placeholder="" maxlength="10">
+						<input id="tel" class="tel form_style" type="tel" placeholder="" maxlength="10">
 						<input class="email form_style" type="email" placeholder="">
 						<div class="my-selector-c">
 							<div>

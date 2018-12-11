@@ -39,7 +39,7 @@
 						
 					</div>
 					<a href='https://www.facebook.com/kirinbar/'>
-					<div class="is18btn">
+					<div class="is18btn2">
 						<div class="italic">
 								NO 還沒18歲
 						</div>

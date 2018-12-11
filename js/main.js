@@ -1,7 +1,7 @@
 var ahb_array=[
-{top:'46%',left:'33%'},
+{top:'38%',left:'34%'},
 {top:'28%',left:'53%'},
-{top:'-15%',left:'33%'},
+{top:'-15%',left:'35%'},
 {top:'38%',left:'25%'},
 {top:'49%',left:'1%'},
 {top:'0%',left:'61%'},

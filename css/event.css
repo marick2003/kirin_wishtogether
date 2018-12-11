@@ -23,7 +23,17 @@
     width: 185px;
     height: 345px;
     margin: 0 auto;
+}
+.user_ahb .ahb_wish img{
 
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+
+}
+.user_ahb .ahb_wish img.active{
+
+    opacity: 1;
 }
 .ahb_wish::before{
     content: "";
@@ -163,6 +173,7 @@
    position: relative;
    margin: 0 auto;
    top: 0px;
+   z-index: 2;
    -webkit-animation: float 4s ease-in-out infinite;
    animation: float 4s ease-in-out infinite;
 
@@ -176,7 +187,7 @@
     width: 260px;
     height: 71px;
     margin: 0 auto;
-    margin-top: -25px;
+    margin-top: -50px;
     text-align: center;
     background-image: url(../images/event_b01.png);
     background-position: top center;
@@ -221,12 +232,12 @@
     margin-bottom: 25px;
 }
 #form .award{
-    width: 282px;
+    width: 260px;
     margin: 0 auto;
     padding: 20px 20px;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
-    border-color: coral;
+    border-color: #ff0000;
     margin-bottom: 25px;
 
 }
@@ -238,7 +249,7 @@
 }
 #form .form_container{
 
-    width: 325px;
+    width: 310px;
     height: 265px;
     margin: 0 auto;
     background-image: url(../images/form_bg.png);
@@ -259,8 +270,8 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    bottom: 126px;
-    left: 34px;
+    bottom: 137px;
+    left: 32px;
     background-color: #ffffff;
     cursor: pointer;
     
@@ -271,41 +282,41 @@
 #form .name{
 
     position: absolute;
-    top: 225px;
-    left: 87px;
+    top: 217px;
+    left: 75px;
 }
 #form .tel{
 
     position: absolute;
-    top: 267px;
-    left: 87px;
+    top: 259px;
+    left: 75px;
 }
 #form .email{
 
     position: absolute;
-    top: 310px;
-    left: 87px;
+    top: 302px;
+    left: 75px;
 }
 #form .address{
 
 position: absolute;
-    top: 395px;
-    left: 87px;
+    top: 382px;
+    left: 75px;
 }
 
 #form .my-selector-c{
 
     position: absolute;
-    top: 342px;
-    left: 59px;
-    width: 270px;
+    top: 333px;
+    left: 63px;
+    width: 248px;
 }
 #form .my-selector-c select{
     height: 41px;
     background-color: transparent;
     border-radius: 0;
     border: none;
-    width: 138px;
+    width: 130px;
     margin-top: 8px;
     margin-right: 6px;
     text-indent: 25px;
@@ -330,8 +341,8 @@ position: absolute;
     height: 28px;
    /* background-color: antiquewhite;*/
     position: absolute;
-    bottom: 111px;
-    left: 180px;
+    bottom: 128px;
+    left: 167px;
 }
 .form_style {
     width: 228px;
