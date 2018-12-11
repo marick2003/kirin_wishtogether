@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+
 html, body{
     position: relative;
     font-family: 'Noto Sans TC', 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
@@ -241,7 +242,7 @@ header .logo{
 }
 footer{
 
-	width: 100%;
+	  width: 100%;
     height: 60px;
     background: #2e2e2e;
     bottom: 0px;
@@ -530,4 +531,13 @@ body.menu-open #menu {
     height: 13px;
     top: 27px;
     right: 25px;
+}
+@media (min-width: 768px) {
+  
+  .footer-img01{
+
+    width: 684px;
+    margin: 10px -144px;
+  }
+  
 }

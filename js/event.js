@@ -65,7 +65,7 @@ $(document).ready(function() {
 
       }else{
 
-        alert("請輸入暱稱與願力");
+        alert("請輸入暱稱與願望");
       }
 
     	
