@@ -523,13 +523,6 @@ body.menu-open #menu {
   }
 }
 
-.delay-5s{
--webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
-  
-    animation-delay: 5s;
-
-
-}
 
 .arrowicon{
     position: absolute;
