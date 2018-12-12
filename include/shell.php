@@ -16,7 +16,7 @@
 	<div class='main'>
 		<ul class='menu'>
 			<li class='btn '>
-				<a href='./event.php'>
+				<a href='./wish.php'>
 					<div class='center'>
 						<div class='main'>
 							<div class='text'></div>

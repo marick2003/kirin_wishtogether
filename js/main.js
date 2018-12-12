@@ -14,7 +14,7 @@ var ahb_array=[
 var nowpage="index";
 $(document).ready(function() {
 
-	
+   sendPage("/index");
   $(window).resize(function() {
     resize();
     
@@ -26,11 +26,10 @@ $(document).ready(function() {
   ///進互動
   $("#index .btn").click(function(e) {
   		
+  		    sendEvent("首頁_即刻發願","點選_首頁_即刻發願","首頁");
   			changepage("event",function(){
 
-  				window.open('./event.php',
-		  '_self' // <- This is what makes it open in a new window.
-		);
+  				window.open('./wish.php','_self');
   			})
 
   });
@@ -149,6 +148,7 @@ function exit_index(callback){
 
 ////互動頁進場
 function start_event(){
+
 
 $("#event").fadeIn(function(){
 

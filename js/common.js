@@ -50,19 +50,15 @@ $( document ).ready(function() {
 
     //網站分享連回
     if(getUrlParam("post")=="fb"){
-
+        sendEvent("互動_回訪分享","點選_互動_回訪分享","互動");
 
     }
     //個人分享連回
     if(getUrlParam("share")=="fb"){
-
+         
+         sendEvent("全站分享","點選_全站分享","全站");
 
     }
-
-
-
-
-	
    loading();  
   
   $(".menu-toggle").on('click', function() {

@@ -38,6 +38,9 @@ function applyBlur()
     TweenMax.set($(".swiper-container"), {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});  
 };
 $(document).ready(function() {
+
+    document.title = '輸入願望｜KIRIN Bar BEER 全員發願升空Bar';
+    sendPage()
     new TwCitySelector({
 			el: ".my-selector-c",
 			elCounty: ".county", // 在 el 裡查找 dom
@@ -56,6 +59,7 @@ $(document).ready(function() {
         
       if($(".nickname").val()!="" && $(".wishtxt").val()!="")
       {
+        sendEvent("互動_即刻發願","點選_互動_即刻發願","互動");
         nickname=$(".nickname").val();
         wishtxt=$(".wishtxt").val();
         exit_event(function(){
@@ -80,7 +84,7 @@ $(document).ready(function() {
   $(".fb_btn").click(function(){
                 
 
-
+            sendEvent('互動_臉書分享', '點選_互動_臉書分享', '互動');
             FB.ui({
             method: 'feed',
             link: 'https://www.kirin.com.tw/barbeer/event/wishtogether/2018/demo/share.php' + '?p='+nickname,
@@ -101,11 +105,23 @@ $(document).ready(function() {
 
     });
 
+  $(".site_btn").click(function(){
+
+
+  });
+
+  $(".line_btn").click(function(){
+
+
+        sendEvent('互動_加入line', '點選_完成_加入line', '完成');
+
+  });
+
   $("#form .btn").click(function(){
 
           if(check_form() && form_final){
                 form_final=false;
-               //sendEvent('填寫資料＿完成', '點選＿填寫資料_完成', 'KOL');
+               sendEvent('互動_填寫個資', '點選_互動_填寫個資', '互動');
                 var _str="name="+$(".startform .name").val()+"&phone="+$(".startform .tel").val()+"&email="+$('.startform .email').val()+"&address="+$(".startform .county").val()+" "+$(".startform .district").val()+" "+$('.startform .address').val()+"&type="+wishnum+"&nickname="+nickname+"&wish="+wishtxt;
                 $.ajax({
                             type: "POST",
@@ -306,9 +322,11 @@ function exit_animate(){
 
 function start_form(){
 
+  document.title = '填寫資料｜KIRIN Bar BEER 全員發願升空Bar';
+  sendPage("/personal");
 	$("#form").fadeIn(function(){
 
-		
+		    
 	});
 
 }
@@ -322,6 +340,9 @@ function exit_form(callback){
 }
 
 function start_done(){
+
+  document.title = '完成｜KIRIN Bar BEER 全員發願升空Bar';
+  sendPage("/finish");
 	$("#done").fadeIn(function(){
 
 		
@@ -332,7 +353,6 @@ function start_done(){
 function exit_done(callback){
 
 	$("#done").fadeOut(function(){
-
 		callback();
 	});
 }
