@@ -33,7 +33,7 @@ body {
 input.ipt-text, textarea {
   color: #252525;
   font-size: 14px;
-  font-family: 'sourcehansans-tc', 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   border: #dedede 0px solid;
@@ -78,7 +78,7 @@ select {
   height: 43px;
   color: #252525;
   font-size: 14px;
-  font-family: 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0 0 0 14px;
   border: #dedede 1px solid;
@@ -295,7 +295,7 @@ footer{
 }
 .is18-img02 {
 	  width: 123px;
-    bottom: -50px;
+    bottom: -60px;
     position: absolute;
     margin: 0px 110px;
 
@@ -370,7 +370,7 @@ footer{
   width: 100%;
   height: 100%;
   min-height: 523px;
-  position: absolute;
+  position: fixed;
   z-index: 8;
 
   -webkit-transition: all .3s ease-out;
@@ -425,7 +425,7 @@ body.menu-open #menu {
   margin: 0 auto;
   background-image: url(../images/menu.png);
   background-size: auto;
-  width: 66%;
+  width: 234px;
 }
 #menu .main .menu li .main .text {
   
@@ -532,12 +532,31 @@ body.menu-open #menu {
     top: 27px;
     right: 25px;
 }
-@media (min-width: 768px) {
+.footer-img02{
+
+    /*width: 684px;
+    margin: 10px -144px;*/
+    display: none;
+  }
+@media (min-width:486px) {
   
   .footer-img01{
 
-    width: 684px;
-    margin: 10px -144px;
+    /*width: 684px;
+    margin: 10px -144px;*/
+    display: none;
   }
-  
+  footer{
+    height: auto;
+  }
+  footer .center{
+    max-width: none;
+  }
+    .footer-img02{
+     width: 90%;
+     display: block;
+    /* width: 336px; */
+     margin: 20px auto;
+     float: none; 
+  }
 }

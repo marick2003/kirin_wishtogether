@@ -175,7 +175,7 @@ function init(){
 }
 ////首頁進場
 function intro(){
-
+  $("html").scrollTop(0);
 	$("#wrapper .content .inner,#snowContainer,#event").fadeIn(function(){
 		form_final=true;
 		snow_init();
@@ -241,7 +241,7 @@ function exit_event(callback){
 
 	setTimeout(function(){ 
 
-	   $("#event").fadeOut(function(){
+	   $("#event").fadeOut(50,function(){
 		    callback();
 	   });
 
@@ -257,6 +257,12 @@ function exit_event(callback){
 
 function start_animate(){
 
+  $('html, body').animate({
+        scrollTop: 0
+    }, 300, function() {
+        // if you need a callback function
+    });
+
   $('.wish_b01 p ,.wish_b02 p').empty();
   $('.wish_b01 p').append(nickname);
   $(".wish_b02 p").append(wishtxt);
@@ -266,7 +272,7 @@ function start_animate(){
 
 	TweenMax.set($(".user_ahb"), {top: '0px', opacity:1, opacity:1});
 	
-	$("#animate").fadeIn(100,function(){
+	$("#animate").fadeIn(50,function(){
 		TweenMax.to($(".user_ahb"), 2 ,{ opacity:1, ease : Expo.easeOut});
 	});
 	var t=0;
@@ -292,11 +298,11 @@ function start_animate(){
 
 	setTimeout(function(){
 		
-		TweenMax.to($(".user_ahb"), 4 ,{delay:2, top:'-707px', opacity:1, ease : Expo.easeOut});
+		TweenMax.to($(".user_ahb"), 4 ,{delay:3, top:'-707px', opacity:1, ease : Expo.easeOut});
 	
-	},3500);
+	},4500);
 
-    setTimeout(function(){ 
+  setTimeout(function(){ 
 
     	$("#snowContainer").fadeOut(function(){
 
@@ -306,7 +312,7 @@ function start_animate(){
     	})
     	
 
-    },7000);
+    },8000);
 
 
 }
@@ -321,7 +327,11 @@ function exit_animate(){
 
 
 function start_form(){
-
+   $('html, body').animate({
+        scrollTop: 0
+    }, 200, function() {
+        // if you need a callback function
+    });
   document.title = '填寫資料｜KIRIN Bar BEER 全員發願升空Bar';
   sendPage("/personal");
 	$("#form").fadeIn(function(){
@@ -340,7 +350,7 @@ function exit_form(callback){
 }
 
 function start_done(){
-
+  $("html").scrollTop(0);
   document.title = '完成｜KIRIN Bar BEER 全員發願升空Bar';
   sendPage("/finish");
 	$("#done").fadeIn(function(){
@@ -362,6 +372,7 @@ function exit_done(callback){
  * Preloader,” on Codepen: https://codepen.io/zadvorsky/pen/CoDes
  * 
  */
+
 var Point = function(x, y) {
   this.x = x || 0;
   this.y = y || 0;

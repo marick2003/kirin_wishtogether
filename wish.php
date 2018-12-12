@@ -158,15 +158,19 @@
 					<div class="done_txt2">
 						<img src="images/done_txt2.png">
 					</div>
-					<div class="site_btn">
-						<img src="images/done_btn3.png">
-					</div>
+					<a href="https://goo.gl/maps/RxigTTqhKCK2" target="_blank">
+						<div class="site_btn">
+							<img src="images/done_btn3.png">
+						</div>
+					</a>
 					<div class="done_txt1">
 						<img src="images/done_txt1.png">
 					</div>
-					<div class="line_btn">
-						<img src="images/done_btn4.png">
-					</div>
+					<a href="https://line.me/R/ti/p/%40pdz2869x" target="_blank">
+						<div class="line_btn">
+							<img src="images/done_btn4.png">
+						</div>
+					</a>
 					<div class="qrcode">
 						<img src="images/done_qrcode.jpg">
 					</div>

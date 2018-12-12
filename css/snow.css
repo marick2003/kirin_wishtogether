@@ -73,6 +73,14 @@
     100% { -webkit-transform: translate(0px, 1000px); }
 }
 
+@-webkit-keyframes drop2
+{
+    /* Move a snow to -300 pixels in the y-axis at the start of the animation */
+    0%   { -webkit-transform: translate(0px, 0%); }
+    /* Move a snow to 600 pixels in the y-axis at the end of the animation */
+    100% { -webkit-transform: translate(0px, 100%); }
+}
+
 /* Rotates a snow from -50 to 50 degrees in 2D space */
 @-webkit-keyframes clockwiseSpin
 {
@@ -90,4 +98,12 @@
     0%   { -webkit-transform: scale(-1, 1) rotate(50deg); }
     /* Flip a snow and rotate it by -50 degrees in 2D space at the end of the animation */
     100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
+}
+
+.iosaddseed{
+    position: absolute;
+    width: auto;
+    height: auto;
+    -webkit-animation: drop2 1s infinite;  /* Chrome, Safari, Opera */
+    animation: drop2 1s infinite;
 }

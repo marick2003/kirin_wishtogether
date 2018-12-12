@@ -123,7 +123,8 @@ function createAsnow()
  //window.addEventListener('load', init, false);
 
 function clearsnow(){
-
+        //$(".snowclass").removeClass("iosaddseed");
+         $("#snowContainer").removeClass("iosaddseed");
         $("#snowContainer").empty();
     
 }
@@ -133,17 +134,29 @@ function addseed(){
 //console.log(seed_array);
 //$(".snowclass")
  //声明定时器运行次数
-    var index=-1;
-    //声明步长值step
-    var step;
-    //声明当前值cur
-    var cur;
-    //声明目标值
-    var target = 0.4;
-    
+
+
+   if(iOS()){
+   
+
+        // $(".snowclass").css({'animation-name':'none'});
+        // $(".snowclass").css({'animation-duration':'none'});
+        // $(".snowclass").css({'animation-delay':'none'});
+        $("#snowContainer").addClass("iosaddseed");
+        //$("#snowContainer").
+
+            
+     }else{
 
     $(".snowclass").each(function( index ) {
 
+        var index=-1;
+        //声明步长值step
+        var step;
+        //声明当前值cur
+        var cur;
+        //声明目标值
+        var target = 0.4;
             
        //var t= $(this);
        var q=$(this);
@@ -156,13 +169,16 @@ function addseed(){
         step = 0.04*(2*index+1);
         //更新当前值
         
-        cur = 9;
+        cur = 10;
         //console.log(seed_array[index]);
         //若步长设置值使得元素超过目标点时，将步长设置值更改为目标点值 - 当前值
         //test.style.left = cur + step + 'px';
         //console.log(cur-step);
         //{'width': (percent + '%')}
+        q.css({'-webkit-animation-duration': cur-step+'s'});
         q.css({'animation-duration': cur-step+'s'});
+        
+
         if(cur-step<=target){
             clearInterval(t);
         }
@@ -170,9 +186,12 @@ function addseed(){
         
         //当元素到达目标点时，停止定时器
          
-    },20);
+    },40);
 
 
     });
+
+
+    }
 
 } 

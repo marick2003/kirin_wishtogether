@@ -1,3 +1,6 @@
+#wrapper .content{
+        min-height: 750px;
+}
 #wrapper .content .inner {
     width: 310px;
     height: 350px;
@@ -116,14 +119,14 @@
     height: 24px;
     margin-bottom: 20px;
     margin-left: 0px;
-    padding-left: 5px;
+    padding-left: 2px;
 
 }
 .inputwish .text:nth-child(2) textarea{
     width: 220px;
     height: 100px;
     margin-bottom: 20px;
-    padding-left: 5px;
+    padding-left: 2px;
     
 }
 .inputwish .btn{
@@ -131,7 +134,7 @@
     position: relative;
     width: 247px;
     margin: 0 auto;
-    margin-bottom: 79px; 
+    margin-bottom: 135px; 
 }
 
 
@@ -263,7 +266,7 @@
 
     width: 250px;
     margin: 0 auto;
-    margin-bottom: 95px;
+    margin-bottom: 135px;
 }
 
 .check_btn{
@@ -345,8 +348,7 @@ position: absolute;
     left: 167px;
 }
 .form_style {
-    width: 228px;
-
+    width: 225px;
     padding-left: 10px;
     padding-right: 0px;
     line-height: 35px;
@@ -412,6 +414,7 @@ position: absolute;
   }
   .qrcode{
     width: 125px;
+    height: 210px;
     margin: 0 auto;
     margin-bottom: 104px;
   }

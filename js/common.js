@@ -14,7 +14,7 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-
+var GA_TRACKING_ID='UA-15575589-8';
 var windowWidth, windowHeight;
 function getWindowInfo(){
     windowWidth = window.innerWidth;
@@ -154,4 +154,24 @@ function log($obj){
     if(window.console){
         window.console.log($obj);
     }
+}
+
+function iOS() {
+
+  var iDevices = [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ];
+
+  if (!!navigator.platform) {
+    while (iDevices.length) {
+      if (navigator.platform === iDevices.pop()){ return true; }
+    }
+  }
+
+  return false;
 }
