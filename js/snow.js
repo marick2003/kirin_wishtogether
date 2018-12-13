@@ -78,7 +78,8 @@ function createAsnow()
     var image = document.createElement('img');
     
     /* Randomly choose a snow image and assign it to the newly created element */
-    image.src = 'images/snow' + randomInteger(1, 6) + '.png';
+    var type=randomInteger(1,5);
+    image.src = 'images/snow' + type + '.png';
     
     snowDiv.style.top = "-100px";
 
@@ -110,7 +111,10 @@ function createAsnow()
     snowDiv.style.webkitAnimationDelay = snowDelay + ', ' + snowDelay;
 
     image.style.webkitAnimationDuration = spinDuration;
+    if(type=='5'){
 
+        snowDiv.className="cloud";
+    }
     snowDiv.className="snowclass";
     // add the <img> to the <div>
     snowDiv.appendChild(image);
@@ -142,8 +146,45 @@ function addseed(){
         // $(".snowclass").css({'animation-name':'none'});
         // $(".snowclass").css({'animation-duration':'none'});
         // $(".snowclass").css({'animation-delay':'none'});
-        $("#snowContainer").addClass("iosaddseed");
-        //$("#snowContainer").
+       $(".cloud").fadeOut();
+       $("#snowContainer").addClass("iosaddseed");
+
+        var index2=-1;
+        //声明步长值step
+        var step2;
+        //声明当前值cur
+        var cur2;
+        //声明目标值
+        var target2 = 0.4;
+            
+       //var t= $(this);
+       var q2=$("#snowContainer");
+       var t2;
+      // clearInterval(t.timer);
+       t2=setInterval(function(){
+        //更新定时器的工作次数
+        index2++;
+        //更新步长值
+        step2 = 0.04*(2*index+1);
+        //更新当前值
+        
+        cur2 = 8;
+        //console.log(seed_array[index]);
+        //若步长设置值使得元素超过目标点时，将步长设置值更改为目标点值 - 当前值
+        //test.style.left = cur + step + 'px';
+        //console.log(cur-step);
+        //{'width': (percent + '%')}
+        q2.css({'-webkit-animation-duration': cur2-step2+'s'});
+        q2.css({'animation-duration': cur2-step2+'s'});
+        
+
+        if(cur2-step2<=target2){
+            clearInterval(t2);
+        }
+         
+    },40);
+
+
 
             
      }else{
@@ -186,7 +227,7 @@ function addseed(){
         
         //当元素到达目标点时，停止定时器
          
-    },40);
+    },30);
 
 
     });

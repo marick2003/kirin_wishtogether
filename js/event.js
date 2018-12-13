@@ -40,7 +40,7 @@ function applyBlur()
 $(document).ready(function() {
 
     document.title = '輸入願望｜KIRIN Bar BEER 全員發願升空Bar';
-    sendPage()
+    sendPage("/wish");
     new TwCitySelector({
 			el: ".my-selector-c",
 			elCounty: ".county", // 在 el 裡查找 dom
@@ -48,7 +48,10 @@ $(document).ready(function() {
 		
 		});
   canvas=document.getElementById('celebration');
-  celebrationCanvas= new CelebrationCanvas(document.getElementById('celebration'), 375, windowHeight);
+  celebrationCanvas= new CelebrationCanvas(document.getElementById('celebration'), 1280, windowHeight);
+
+  $("#celebration").css({'margin-left':-(1280/2)+'px'});
+
   $(window).resize(function() {
     resize();
     
@@ -120,6 +123,8 @@ $(document).ready(function() {
   $("#form .btn").click(function(){
 
           if(check_form() && form_final){
+
+                
                 form_final=false;
                sendEvent('互動_填寫個資', '點選_互動_填寫個資', '互動');
                 var _str="name="+$(".startform .name").val()+"&phone="+$(".startform .tel").val()+"&email="+$('.startform .email').val()+"&address="+$(".startform .county").val()+" "+$(".startform .district").val()+" "+$('.startform .address').val()+"&type="+wishnum+"&nickname="+nickname+"&wish="+wishtxt;
@@ -175,7 +180,12 @@ function init(){
 }
 ////首頁進場
 function intro(){
-  $("html").scrollTop(0);
+
+   $('html, body').animate({
+        scrollTop: 0
+    }, 200, function() {
+       
+    });
 	$("#wrapper .content .inner,#snowContainer,#event").fadeIn(function(){
 		form_final=true;
 		snow_init();
@@ -300,7 +310,7 @@ function start_animate(){
 		
 		TweenMax.to($(".user_ahb"), 4 ,{delay:3, top:'-707px', opacity:1, ease : Expo.easeOut});
 	
-	},4500);
+	},4000);
 
   setTimeout(function(){ 
 
@@ -312,7 +322,7 @@ function start_animate(){
     	})
     	
 
-    },8000);
+    },7000);
 
 
 }
@@ -330,10 +340,11 @@ function start_form(){
    $('html, body').animate({
         scrollTop: 0
     }, 200, function() {
-        // if you need a callback function
+       
     });
   document.title = '填寫資料｜KIRIN Bar BEER 全員發願升空Bar';
   sendPage("/personal");
+  $("#form .btn").removeClass('check');
 	$("#form").fadeIn(function(){
 
 		    
@@ -350,7 +361,12 @@ function exit_form(callback){
 }
 
 function start_done(){
-  $("html").scrollTop(0);
+
+  $('html, body').animate({
+        scrollTop: 0
+    }, 300, function() {
+        // if you need a callback function
+    });
   document.title = '完成｜KIRIN Bar BEER 全員發願升空Bar';
   sendPage("/finish");
 	$("#done").fadeIn(function(){

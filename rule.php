@@ -19,7 +19,7 @@
 
 			<div class="inner">
 				<div id="rule">
-					<img src="images/rule_txt.png">
+					<img src="images/rule_txt.png?v=2">
 				</div>
 					
 			</div>

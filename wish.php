@@ -130,9 +130,12 @@
 						</div>
 						<input class="address form_style" type="text" placeholder="">
 						<div class="check_btn"></div>
-						<div class="rule_btn">
-							<a href="https://www.kirin.com.tw/privacy.php" target="_blank"></a>
-						</div>
+						
+							<a href="https://www.kirin.com.tw/privacy.php" target="_blank">
+								<div class="rule_btn">
+								</div>
+							</a>
+						
 						
 					</div>
 					</div>
