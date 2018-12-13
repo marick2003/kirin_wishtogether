@@ -91,8 +91,9 @@ function createAsnow()
     
     /* Set the -webkit-animation-name property with these values */
     snowDiv.style.webkitAnimationName = 'fade, drop';
+    snowDiv.style.animationName = 'fade, drop';
     image.style.webkitAnimationName = spinAnimationName;
-    
+    image.style.animationName= spinAnimationName;
     /* Figure out a random duration for the fade and drop animations */
     var fadeAndDropDuration = durationValue(randomFloat(5, 11));
     
@@ -100,6 +101,7 @@ function createAsnow()
     var spinDuration = durationValue(randomFloat(4, 8));
     /* Set the -webkit-animation-duration property with these values */
     snowDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+    snowDiv.style.animationDuration= fadeAndDropDuration + ', ' + fadeAndDropDuration;
     snowDiv.seed=fadeAndDropDuration;
     // var str = fadeAndDropDuration;
     // var lastIndex = str.lastIndexOf(" ");
@@ -109,8 +111,9 @@ function createAsnow()
 
     var snowDelay = durationValue(randomFloat(0, 5));
     snowDiv.style.webkitAnimationDelay = snowDelay + ', ' + snowDelay;
-
+    snowDiv.style.animationDelay= snowDelay + ', ' + snowDelay;
     image.style.webkitAnimationDuration = spinDuration;
+    image.style.animationDuration = spinDuration;
     if(type=='5'){
 
         snowDiv.className="cloud";
