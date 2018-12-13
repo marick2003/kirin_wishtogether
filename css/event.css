@@ -110,7 +110,7 @@ html, body{
 }
 
 .inputwish p{
-    
+
     margin-top: 6px;
     text-align: left;
     float: left;
@@ -141,7 +141,9 @@ html, body{
     position: relative;
     width: 247px;
     margin: 0 auto;
+    cursor: pointer;
     margin-bottom: 135px; 
+
 }
 
 
@@ -276,6 +278,7 @@ html, body{
     margin: 0 auto;
     margin-bottom: 135px;
     position: relative;
+    cursor: pointer;
 }
 #form .btn::before{
     content: "";
@@ -306,13 +309,13 @@ html, body{
 #form .name{
 
     position: absolute;
-    top: 217px;
+    top: 220px;
     left: 75px;
 }
 #form .tel{
 
     position: absolute;
-    top: 259px;
+    top: 262px;
     left: 75px;
 }
 #form .email{
@@ -406,6 +409,7 @@ position: absolute;
     width: 250px;
     margin: 0 auto;
     margin-bottom: 25px; 
+    cursor: pointer;
   }
   .date_text{
 
@@ -432,6 +436,7 @@ position: absolute;
     width: 272px;
     margin: 0 auto;
     margin-bottom: 44px; 
+    cursor: pointer;
   }
   .qrcode{
     width: 125px;

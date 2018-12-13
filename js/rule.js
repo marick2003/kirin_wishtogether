@@ -37,14 +37,9 @@ function applyBlur()
     TweenMax.set($(".swiper-container"), {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});  
 };
 $(document).ready(function() {
-    new TwCitySelector({
-			el: ".my-selector-c",
-			elCounty: ".county", // 在 el 裡查找 dom
-			elDistrict: ".district" // 在 el 裡查找 dom
-		
-		});
-  canvas=document.getElementById('celebration');
-  celebrationCanvas= new CelebrationCanvas(document.getElementById('celebration'), 375, windowHeight);
+
+    sendPage("/rule");
+
   $(window).resize(function() {
     resize();
     
@@ -89,7 +84,17 @@ function intro(){
 	$("#wrapper .content .inner").fadeIn(function(){
 		
 		snow_init();
-		start_event();
+		//start_event();
+    
+    if(getUrlParam("p")=="privacy"){
+         
+      $('html, body').animate({
+          scrollTop: 2500
+      }, 300, function() {
+          // if you need a callback function
+      });
+
+    }
 
 	});
 

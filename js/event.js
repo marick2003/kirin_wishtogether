@@ -90,7 +90,7 @@ $(document).ready(function() {
             sendEvent('互動_臉書分享', '點選_互動_臉書分享', '互動');
             FB.ui({
             method: 'feed',
-            link: 'https://www.kirin.com.tw/barbeer/event/wishtogether/2018/demo/share.php' + '?p='+nickname,
+            link: 'https://www.kirin.com.tw/barbeer/event/wishtogether/2018/share.php' + '?p='+nickname,
             // picture: 'http://www.newbalance.com.tw/event/2017/mybetaword/uploads/'+save_pic_url
             name:"【全員發願升空Bar】熱血發射你的 2019 新心願",
              description: "跟著"+nickname+"發新願，抽日本九州機票 & 威秀限量電影票"
@@ -130,7 +130,7 @@ $(document).ready(function() {
                 var _str="name="+$(".startform .name").val()+"&phone="+$(".startform .tel").val()+"&email="+$('.startform .email').val()+"&address="+$(".startform .county").val()+" "+$(".startform .district").val()+" "+$('.startform .address').val()+"&type="+wishnum+"&nickname="+nickname+"&wish="+wishtxt;
                 $.ajax({
                             type: "POST",
-                            url: "../api/sendForm.php",
+                            url: "./api/sendForm.php",
                             data:_str,
                             dataType: "text",
       
@@ -161,7 +161,7 @@ $(document).ready(function() {
 
     });
 $(".again_btn").click(function(e) {
-
+    sendEvent('互動_again', '點選_互動_again', '互動');
       exit_done(function(){
           intro();
       });
@@ -203,31 +203,42 @@ function start_event(){
 	$(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeIn();
 	$("#snowContainer").fadeIn();
 	$(".swiper-button-next,.swiper-button-prev").fadeIn();
-
+  wishnum=1;
+   $(".wishtitle img").removeClass("active");
+   $(".wishtitle img").eq(0).addClass("active");
 	$("#event").fadeIn(function(){
 
 			swiper = new Swiper('.swiper-container', {
 
-		      pagination: {
-		        el: '.swiper-pagination'
-		      },
+		    
 		      navigation: {
 		        nextEl: '.swiper-button-next',
 		        prevEl: '.swiper-button-prev',
+
 		      },
+          on:{
+
+            slideChange: function(){
+
+               //alert(this.activeIndex);
+               
+                 wishnum=this.activeIndex;
+                 $(".wishtitle img").removeClass("active");
+                 $(".wishtitle img").eq(this.activeIndex).addClass("active");
+            }
+          }
+
 		    });
 
-        $(".wishtitle img").removeClass("active");
-        $(".wishtitle img").eq(0).addClass("active");
-        wishnum=swiper.realIndex;
-        swiper.on('slideChange', function () {
+       
+       
+        // swiper.on('slideChange', function () {
 
-            console.log(swiper.realIndex);
-         wishnum=swiper.realIndex;
-        $(".wishtitle img").removeClass("active");
-        $(".wishtitle img").eq(swiper.realIndex).addClass("active");
+        //  console.log(swiper.realIndex);
+        //  wishnum=swiper.realIndex;
+        
 
-        });
+        // });
 
 
 	});

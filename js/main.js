@@ -63,7 +63,7 @@ function init(){
 ////首頁進場
 function intro(){
 
-$("#wrapper .content .inner").fadeIn(function(){
+$("#wrapper .content .inner").fadeIn(0,function(){
 
 	
 	snow_init();
@@ -80,7 +80,7 @@ function start_index(){
 	});
 	$("#snowContainer").fadeIn();
 
-	var time = 3;
+	var time = 2;
 	var complete = function (e) {
     	
 	};
@@ -95,7 +95,7 @@ function start_index(){
 		TweenMax.to($(this), 3 ,{delay:0.2*index,scale:1,rotationX:0, transformOrigin:"center top", opacity:1, ease: Elastic.easeOut});
 	});
 
-	 }, 2000);
+	 }, 1000);
 
 
 	
@@ -105,12 +105,12 @@ function start_index(){
 		TweenMax.to($(this), 3 ,{delay:0.2*index, opacity:1,rotationX:0, transformOrigin:"center top",ease: Elastic.easeOut});
 	});
 
-     }, 2500);
+     }, 1500);
 	setTimeout(function() {
 		$("#index .title .title04").addClass('animated infinite swing delay-5s');
 	    
 		TweenMax.to($("#index .btn"), 3 ,{delay:0*index, opacity:1,rotationX:0, transformOrigin:"center top", ease: Elastic.easeOut});
-     }, 3000);
+     }, 2000);
 	//snowContainer
 	$(".snowContainer div" ).each(function( index ) {
 	   

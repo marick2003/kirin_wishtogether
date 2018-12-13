@@ -17,20 +17,27 @@
 }
 #index .title .title01{
     position: absolute;
+    width: 60%;
+    left: 17px;
+    top: 15px;
 }
 #index .title .title02{
-	position: absolute;
-    top: 85px;
+    position: absolute;
+    top: 100px;
+    width: 85%;
+    left: 17px;
 }
 #index .title .title03{
-	position: absolute;
-    left: 170px;
-    top: -20px;
+    position: absolute;
+    left: 180px;
+    top: 15px;
+    width: 23%;
 }
 #index .title .title04{
-	position: absolute;
-    top: 155px;
-    left: 175px;
+    position: absolute;
+    top: 160px;
+    left: 168px;
+    width: 15%;
 }
 #index .title .text01{
     position: absolute;

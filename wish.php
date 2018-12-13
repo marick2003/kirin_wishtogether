@@ -131,7 +131,7 @@
 						<input class="address form_style" type="text" placeholder="">
 						<div class="check_btn"></div>
 						
-							<a href="https://www.kirin.com.tw/privacy.php" target="_blank">
+							<a href="./rule.php?p=privacy" target="_blank">
 								<div class="rule_btn">
 								</div>
 							</a>

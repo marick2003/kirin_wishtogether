@@ -47,9 +47,9 @@
   <meta property="og:type"             content="website" />
 
 
-	<meta property="og:image:secure_url" content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta.jpg" />
-	<meta property="og:image"            content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta.jpg" />
-	<meta property="og:image:url"        content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta.jpg" />
+	<meta property="og:image:secure_url" content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta2.jpg" />
+	<meta property="og:image"            content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta2.jpg" />
+	<meta property="og:image:url"        content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta2.jpg" />
 
 
 	
