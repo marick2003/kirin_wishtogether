@@ -63,6 +63,13 @@
     100% { opacity: 0; }
 }
 
+@keyframes fade
+{
+    /* Show a snow while into or below 95 percent of the animation and hide it, otherwise */
+    0%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { opacity: 0; }
+}
 
 /* Makes a snow fall from -300 to 600 pixels in the y-axis */
 @-webkit-keyframes drop
@@ -74,6 +81,22 @@
 }
 
 @-webkit-keyframes drop2
+{
+    /* Move a snow to -300 pixels in the y-axis at the start of the animation */
+    0%   { -webkit-transform: translate(0px, 0%); }
+    /* Move a snow to 600 pixels in the y-axis at the end of the animation */
+    100% { -webkit-transform: translate(0px, 100%); }
+}
+/* Makes a snow fall from -300 to 600 pixels in the y-axis */
+@keyframes drop
+{
+    /* Move a snow to -300 pixels in the y-axis at the start of the animation */
+    0%   { -webkit-transform: translate(0px, 0px); }
+    /* Move a snow to 600 pixels in the y-axis at the end of the animation */
+    100% { -webkit-transform: translate(0px, 1000px); }
+}
+
+@keyframes drop2
 {
     /* Move a snow to -300 pixels in the y-axis at the start of the animation */
     0%   { -webkit-transform: translate(0px, 0%); }
@@ -99,7 +122,24 @@
     /* Flip a snow and rotate it by -50 degrees in 2D space at the end of the animation */
     100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
 }
+/* Rotates a snow from -50 to 50 degrees in 2D space */
+@keyframes clockwiseSpin
+{
+    /* Rotate a snow by -50 degrees in 2D space at the start of the animation */
+    0%   { -webkit-transform: rotate(-50deg); }
+    /*  Rotate a snow by 50 degrees in 2D space at the end of the animation */
+    100% { -webkit-transform: rotate(50deg); }
+}
 
+
+/* Flips a snow and rotates it from 50 to -50 degrees in 2D space */
+@keyframes counterclockwiseSpinAndFlip 
+{
+    /* Flip a snow and rotate it by 50 degrees in 2D space at the start of the animation */
+    0%   { -webkit-transform: scale(-1, 1) rotate(50deg); }
+    /* Flip a snow and rotate it by -50 degrees in 2D space at the end of the animation */
+    100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
+}
 .iosaddseed{
     position: absolute;
     width: auto;

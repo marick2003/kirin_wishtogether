@@ -97,10 +97,12 @@ $(document).ready(function() {
           }, function(response) {
 
             //console.log(response);
-               if (response && !response.error_message) {
+               // if (response && !response.error_message) {
                       
                         
-                    }
+               //  }
+
+               // self.close();
 
           });
 

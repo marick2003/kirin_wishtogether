@@ -19,7 +19,13 @@
 
 			<div class="inner">
 				<div id="rule">
-					<img src="images/rule_txt.png?v=2">
+					<img src="images/rule_txt_01.png?v=2">
+					<img src="images/rule_txt_02.png?v=2">
+					<img src="images/rule_txt_03.png?v=2">
+					<img src="images/rule_txt_04.png?v=2">
+					<img src="images/rule_txt_05.png?v=2">
+					<img src="images/rule_txt_06.png?v=2">
+					<img src="images/rule_txt_07.png?v=2">
 				</div>
 					
 			</div>

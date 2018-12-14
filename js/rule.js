@@ -83,6 +83,7 @@ function intro(){
 
 	$("#wrapper .content .inner").fadeIn(function(){
 		
+    $("#snowContainer").fadeIn();
 		snow_init();
 		//start_event();
     

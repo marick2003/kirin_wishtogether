@@ -82,7 +82,7 @@ select {
   margin: 0;
   padding: 0 0 0 14px;
   border: #dedede 1px solid;
-  background: url(../images/common/combobox-arrow.png) #f7f7f7 right center no-repeat;
+ /* background: url(../images/common/combobox-arrow.png) #f7f7f7 right center no-repeat;*/
   background-size: 23px 5px;
   border-radius: 0;
   box-sizing: border-box;
@@ -251,9 +251,9 @@ footer{
     transform: translate3d(0,0,0);
 }
 .footer-img01 {
-    width: 336px;
-    margin: 19px 0 0 7px;
-    float: left;
+    width: 98%;
+    margin: 19px auto;
+   /* float: left;*/
 }
 
 #wrapper .content{
