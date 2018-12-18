@@ -54,7 +54,7 @@
 
 	
     <script>
-        window.location.replace("https://www.kirin.com.tw/barbeer/event/wishtogether/2018/?post=fb");
+        window.location.replace("https://www.kirin.com.tw/barbeer/event/wishtogether/2018/?post=fb&utm_source=Facebook&utm_medium=wishsharing");
     </script>	 
 </head>
 <body>    
