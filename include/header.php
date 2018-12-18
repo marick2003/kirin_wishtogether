@@ -10,7 +10,7 @@
 	<meta property="og:title" content="KIRIN Bar BEER 全員發願升空Bar" />
 	<meta property="og:image" content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/images/meta2.jpg" />
 	<meta property="og:description" content="一起發願 讓2019如你所願" />
-	<meta property="og:url" content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/?share=fb"/>
+	<meta property="og:url" content="https://www.kirin.com.tw/barbeer/event/wishtogether/2018/?share=fb&utm_source=Facebook&utm_medium=sitesharing"/>
 	<meta property="og:site_name" content="KIRIN Bar BEER 全員發願升空Bar"/>
 	<meta property="og:type" content="website"/>
 
