@@ -207,7 +207,7 @@
   // var onloadCallback = function() {
   //   console.log("grecaptcha is ready!");
   // };
-
-  
+   alert("活動已結束!");
+   window.open('./','_self');
 </script>
 </html>

@@ -85,6 +85,17 @@ $( document ).ready(function() {
       }
 
   });
+    $("#menu ul li").on('click', function(e) {
+        
+        console.log();
+        switch($(this).index()){
+
+            case 0:
+              alert("活動已結束!");  
+            break;
+
+        }
+    });
   // 點選menu或popup外面
   $(document).click(function(e){
   	if ( e.target.id == 'menu' && $('body').hasClass('menu-open') ) {

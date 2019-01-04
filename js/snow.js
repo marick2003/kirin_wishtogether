@@ -1,8 +1,15 @@
+/*
+Copyright (C) 2012 Web3Canvas. All Rights Reserved.
+*/
 
+
+/* Define the number of snow to be used in the animation */
 const NUMBER_OF_snow = 20;
 var seed_array=[];
 var seed_array2=[];
-
+/* 
+    Called when the "Falling snow" page is completely loaded.
+*/
 function snow_init()
 {
     seed_array=[];
@@ -16,24 +23,38 @@ function snow_init()
 }
 
 
+/*
+    Receives the lowest and highest values of a range and
+    returns a random integer that falls within that range.
+*/
 function randomInteger(low, high)
 {
     return low + Math.floor(Math.random() * (high - low));
 }
 
 
-
+/*
+   Receives the lowest and highest values of a range and
+   returns a random float that falls within that range.
+*/
 function randomFloat(low, high)
 {
     return low + Math.random() * (high - low);
 }
 
 
+/*
+    Receives a number and returns its CSS pixel value.
+*/
 function pixelValue(value)
 {
     return value + '%';
 }
 
+
+/*
+    Returns a duration value for the falling animation.
+*/
 
 function durationValue(value)
 {       
@@ -44,38 +65,48 @@ function durationValue(value)
 }
 
 
-
+/*
+    Uses an img element to create each snow. "snow.css" implements two spin 
+    animations for the snow: clockwiseSpin and counterclockwiseSpinAndFlip. This
+    function determines which of these spin animations should be applied to each snow.
+    
+*/
 function createAsnow()
 {
+    /* Start by creating a wrapper div, and an empty img element */
     var snowDiv = document.createElement('div');
     var image = document.createElement('img');
     
-   
+    /* Randomly choose a snow image and assign it to the newly created element */
     var type=randomInteger(1,5);
     image.src = 'images/snow' + type + '.png';
     
     snowDiv.style.top = "-100px";
 
-    
+    /* Position the snow at a random location along the screen */
     snowDiv.style.left = pixelValue(randomInteger(0, 100));
     
-   
+    /* Randomly choose a spin animation */
     var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
     
-   
+    /* Set the -webkit-animation-name property with these values */
+    snowDiv.style.webkitAnimationName = 'fade, drop';
     snowDiv.style.animationName = 'fade, drop';
     image.style.webkitAnimationName = spinAnimationName;
     image.style.animationName= spinAnimationName;
-    
+    /* Figure out a random duration for the fade and drop animations */
     var fadeAndDropDuration = durationValue(randomFloat(5, 11));
     
-    
+    /* Figure out another random duration for the spin animation */
     var spinDuration = durationValue(randomFloat(4, 8));
-   
+    /* Set the -webkit-animation-duration property with these values */
     snowDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
     snowDiv.style.animationDuration= fadeAndDropDuration + ', ' + fadeAndDropDuration;
     snowDiv.seed=fadeAndDropDuration;
- 
+    // var str = fadeAndDropDuration;
+    // var lastIndex = str.lastIndexOf(" ");
+
+    //  str = str.substring(0, lastIndex);
    
 
     var snowDelay = durationValue(randomFloat(0, 5));
@@ -91,10 +122,12 @@ function createAsnow()
     // add the <img> to the <div>
     snowDiv.appendChild(image);
 
-    
+    /* Return this img element so it can be added to the document */
+    return snowDiv;
 }
 
-
+/* Calls the init function when the "Falling snow" page is full loaded */
+ //window.addEventListener('load', init, false);
 
 function clearsnow(){
         //$(".snowclass").removeClass("iosaddseed");

@@ -16,13 +16,13 @@
 	<div class='main'>
 		<ul class='menu'>
 			<li class='btn '>
-				<a href='./wish.php'>
+				<!-- <a href='./wish.php'> -->
 					<div class='center'>
 						<div class='main'>
 							<div class='text'></div>
 						</div>
 					</div>
-				</a>
+				<!-- </a> -->
 			</li>
 			<li class='btn '>
 				<a href='./rule.php'>

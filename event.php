@@ -188,4 +188,7 @@
 	<?php include 'include/footer.php';?>
 
 </body>
+<script type="text/javascript">
+	
+</script>
 </html>

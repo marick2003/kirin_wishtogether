@@ -27,10 +27,11 @@ $(document).ready(function() {
   $("#index .btn").click(function(e) {
   		
   		    sendEvent("首頁_即刻發願","點選_首頁_即刻發願","首頁");
-  			changepage("event",function(){
-
-  				window.open('./wish.php','_self');
-  			})
+  		    alert("活動已結束!");	
+  			//changepage("event",function(){
+  				
+  				//window.open('./wish.php','_self');
+  			//})
 
   });
   $(".logo").click(function(e) {
