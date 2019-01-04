@@ -16,8 +16,9 @@ var swiper;
 var form_final;
 var blurElement = {a:0};//start the blur at 0 pixels
 var windowWidth, windowHeight;
-var nickname,wishtxt,wishnum=1;
-
+var nickname,wishtxt,wishnum=0;
+var checkbot='';
+// var checkbot
 function getWindowInfo(){
 
     windowWidth = window.innerWidth;
@@ -129,7 +130,7 @@ $(document).ready(function() {
                 
                 form_final=false;
                sendEvent('互動_填寫個資', '點選_互動_填寫個資', '互動');
-                var _str="name="+$(".startform .name").val()+"&phone="+$(".startform .tel").val()+"&email="+$('.startform .email').val()+"&address="+$(".startform .county").val()+" "+$(".startform .district").val()+" "+$('.startform .address').val()+"&type="+wishnum+"&nickname="+nickname+"&wish="+wishtxt;
+                var _str="name="+$(".startform .name").val()+"&phone="+$(".startform .tel").val()+"&email="+$('.startform .email').val()+"&address="+$(".startform .county").val()+" "+$(".startform .district").val()+" "+$('.startform .address').val()+"&type="+wishnum+"&nickname="+nickname+"&wish="+wishtxt+"&g-recaptcha-response="+checkbot;
                 $.ajax({
                             type: "POST",
                             url: "./api/sendForm.php",
@@ -143,9 +144,10 @@ $(document).ready(function() {
                           },
                             success: function(response) {
                                 form_final=true;
+
                              console.log(response);
                              if(response.slice(4)=='yes'){
-                                 
+                               checkbot='';
                                exit_form(function(){
 
                                   start_done();
@@ -205,7 +207,7 @@ function start_event(){
 	$(".swiper-button-next,.swiper-button-prev,.wishtitle,.inputwish").fadeIn();
 	$("#snowContainer").fadeIn();
 	$(".swiper-button-next,.swiper-button-prev").fadeIn();
-  wishnum=1;
+  wishnum=0;
    $(".wishtitle img").removeClass("active");
    $(".wishtitle img").eq(0).addClass("active");
 	$("#event").fadeIn(function(){
@@ -223,7 +225,7 @@ function start_event(){
             slideChange: function(){
 
                //alert(this.activeIndex);
-               
+               console.log(this.activeIndex);
                  wishnum=this.activeIndex;
                  $(".wishtitle img").removeClass("active");
                  $(".wishtitle img").eq(this.activeIndex).addClass("active");
@@ -358,6 +360,7 @@ function start_form(){
   document.title = '填寫資料｜KIRIN Bar BEER 全員發願升空Bar';
   sendPage("/personal");
   $("#form .btn").removeClass('check');
+  grecaptcha.reset(widgetId2);
 	$("#form").fadeIn(function(){
 
 		    
@@ -395,12 +398,6 @@ function exit_done(callback){
 		callback();
 	});
 }
-/* 
- *
- * Modified and customized version of Szenia Zadvornykh’s work, “Party
- * Preloader,” on Codepen: https://codepen.io/zadvorsky/pen/CoDes
- * 
- */
 
 var Point = function(x, y) {
   this.x = x || 0;
@@ -615,7 +612,38 @@ function cubeBezier(p0, c0, c1, p1, t) {
 
                 alert("請勾選同意活動辦法");
                 return false;
+            }else if(checkbot==''){
+
+                 alert("請驗證我不是機器人");
+                return false;
             }
     
             return true;
         }
+
+     var verifyCallback = function(response) {
+        //alert(response);
+        if(response){
+
+          checkbot=response;
+        }
+      };
+      var widgetId1;
+      var widgetId2;
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        // widgetId1 = grecaptcha.render('example1', {
+        //   'sitekey' : '6LcVfIMUAAAAAHlm-1wNLEZV_wa-a6nLrf5SOvHW',
+        //   'theme' : 'light'
+        // });
+        widgetId2 = grecaptcha.render(document.getElementById('checkbot'), {
+          'sitekey' : '6Ld9gIMUAAAAAJTXTM0qbyNtDD5nehbr6AFXlKBH',
+          'callback' : verifyCallback
+        });
+        // grecaptcha.render('example3', {
+        //   'sitekey' : '6LcVfIMUAAAAAHlm-1wNLEZV_wa-a6nLrf5SOvHW',
+        //   'callback' : verifyCallback,
+        //   'theme' : 'dark'
+        // });
+      };

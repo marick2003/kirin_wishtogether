@@ -4,6 +4,7 @@
 	<?php include 'include/header.php';?>
 	<link href="css/event.css?v=<?php echo(ceil(time() / 600)) ?>" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/event.js?v=<?php echo(ceil(time() / 600)) ?>" ></script>
+	
 </head>
 <body >
 <!-- shell-->
@@ -21,6 +22,7 @@
 				
 				<!-- -->
 				<div id="event">
+				
 					  <!-- Swiper -->
 					  <div class="swiper-container">
 					    <div class="swiper-wrapper">
@@ -139,6 +141,15 @@
 						
 					</div>
 					</div>
+
+					<form action="javascript:grecaptcha.reset(widgetId2);">
+				      <div id="checkbot"></div>
+				      <!-- <br> -->
+				      <!-- <input type="submit" value="reset"> -->
+				    </form>
+				    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+				        async defer>
+				    </script>
 					<div class="btn">
 						<img src="images/form_btn.png">
 					</div>
@@ -187,8 +198,16 @@
 
 		
 	</div>
+
 	<!-- footer-->
 	<?php include 'include/footer.php';?>
-
+  
 </body>
+<script type="text/javascript">
+  // var onloadCallback = function() {
+  //   console.log("grecaptcha is ready!");
+  // };
+
+  
+</script>
 </html>

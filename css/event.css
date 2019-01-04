@@ -263,7 +263,7 @@ html, body{
 #form .form_container{
 
     width: 310px;
-    height: 265px;
+    height: 235px;
     margin: 0 auto;
     background-image: url(../images/form_bg.png);
     background-position: top center;
@@ -297,7 +297,7 @@ html, body{
     position: absolute;
     width: 16px;
     height: 16px;
-    bottom: 137px;
+    bottom: 195px;
     left: 32px;
     background-color: #ffffff;
     cursor: pointer;
@@ -368,7 +368,7 @@ position: absolute;
     height: 28px;
    /* background-color: antiquewhite;*/
     position: absolute;
-    bottom: 128px;
+    bottom: 185px;
     left: 167px;
 }
 .form_style {
@@ -444,3 +444,9 @@ position: absolute;
     margin: 0 auto;
     margin-bottom: 104px;
   }
+
+#checkbot{
+
+   margin-bottom: 10px;
+   margin-left: 7px;
+}

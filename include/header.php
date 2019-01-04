@@ -19,7 +19,7 @@
 	<link href="css/animate.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/snow.css" type="text/css" media="screen" charset="utf-8">
 	<link href="css/common.css?v=<?php echo(ceil(time() / 600)) ?>" rel="stylesheet" type="text/css" />
-	
+
 
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
