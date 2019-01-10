@@ -1,0 +1,78 @@
+#wrapper .content .inner {
+    width: 320px;
+    height: 350px;
+    top: 20px;
+    left: 50%;
+    margin: 0px 0 0 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: -160px;
+    position: absolute;
+    display: none;
+}
+#award{
+
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 205px; 
+
+    /*margin-top: -80px;*/
+}
+
+#award .title{
+
+    position: relative;
+    width: 156px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.award1_title{
+
+    position: relative;
+    width: 227px;
+    /*margin: 0 auto;*/
+
+}
+.award2_title{
+
+    position: relative;
+    width: 212px;
+    /*margin: 0 auto;*/
+}
+table
+{
+    width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+td
+{
+  font-size: 1em;
+  padding: 5px;
+}
+
+
+
+tr:nth-child(odd) td
+{
+    /*background: #b3f1ff;*/
+    background-color:rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+tr:nth-child(even) td
+{
+    /*background: #30bbff;*/
+    background-color:rgba(0, 162, 255, 0.5);
+    color: #000;
+}
+tr:first-child td{
+
+    background: #000;
+    color: #ffc600;
+}

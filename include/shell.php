@@ -34,13 +34,13 @@
 				</a>
 			</li>
 			<li class='btn '>
-				<!-- <a href=''> -->
+				<a href='./award.php'>
 					<div class='center'>
 						<div class='main'>
 							<div class='text'></div>
 						</div>
 					</div>
-				<!-- </a> -->
+				</a>
 			</li>
 		
 			

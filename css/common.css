@@ -439,7 +439,7 @@ body.menu-open #menu {
 } 
 #menu .main .menu li:nth-child(3) .main .text{
     background-position: 0px -141px;
-    height: 46px;
+    height: 32px;
 } 
 #menu .main .menu li:hover .main .text{
 
